@@ -10,11 +10,24 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        // MARK: - ViewController initialization
+
+        initalizeFirstViewController()
+
         return true
+    }
+
+    private func initalizeFirstViewController() {
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let homeViewController = HomeViewController()
+
+        window.rootViewController = homeViewController
+        self.window = window
+        window.makeKeyAndVisible()
     }
 
     // MARK: UISceneSession Lifecycle
