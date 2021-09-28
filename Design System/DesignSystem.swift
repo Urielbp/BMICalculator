@@ -24,6 +24,7 @@ final class DesignSystem {
 
     struct Margin {
         static let standard: CGFloat = 24
+        static let small: CGFloat = 16
     }
 
     struct BorderWidth {
@@ -38,9 +39,8 @@ final class DesignSystem {
 
     struct Colors {
         static let primary = UIColor(named: "Primary Color")
-        static let secondary = UIColor(named: "Secondary Color")
         static let textStrong = UIColor(named: "Text Strong")
-        static let backGround = UIColor.black
+        static let backGround = UIColor(named: "Background Color")
         static let black = UIColor.black
         static let white = UIColor.white
         static let clear = UIColor.clear

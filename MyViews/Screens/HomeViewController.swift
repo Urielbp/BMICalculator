@@ -9,10 +9,6 @@ import UIKit
 
 class HomeViewController: LoadableViewController<HomeView> {
 
-//    override func viewDidLoad() {
-//        customView.setupView()
-//    }
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }

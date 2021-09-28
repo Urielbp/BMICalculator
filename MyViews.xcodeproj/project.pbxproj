@@ -19,6 +19,7 @@
 		7B62C5852703CD92008D6261 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62C5842703CD92008D6261 /* HomeViewController.swift */; };
 		7B62C5872703CD9B008D6261 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62C5862703CD9B008D6261 /* HomeView.swift */; };
 		7B62C58A2703CE48008D6261 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7B62C5892703CE48008D6261 /* SnapKit */; };
+		7B62C58D2703D69F008D6261 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62C58C2703D69F008D6261 /* UIView+Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		7B62C5812703CC6F008D6261 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		7B62C5842703CD92008D6261 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7B62C5862703CD9B008D6261 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		7B62C58C2703D69F008D6261 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		7B62C57B2703CAE8008D6261 /* Design System */ = {
 			isa = PBXGroup;
 			children = (
+				7B62C58B2703D648008D6261 /* Extensions */,
 				7B62C5802703CC0F008D6261 /* Helpers */,
 				7B62C5812703CC6F008D6261 /* DesignSystem.swift */,
 			);
@@ -161,6 +164,14 @@
 				7B62C5862703CD9B008D6261 /* HomeView.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		7B62C58B2703D648008D6261 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7B62C58C2703D69F008D6261 /* UIView+Layout.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B62C58D2703D69F008D6261 /* UIView+Layout.swift in Sources */,
 				7B62C5822703CC6F008D6261 /* DesignSystem.swift in Sources */,
 				7B62C54C2703CA12008D6261 /* AppDelegate.swift in Sources */,
 				7B62C57F2703CB49008D6261 /* ViewCodeProtocol.swift in Sources */,
