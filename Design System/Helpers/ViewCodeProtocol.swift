@@ -19,4 +19,10 @@ extension ViewCode {
         setupConstraints()
         setupAdditionalConfiguration()
     }
+
+    func buildViewHierarchy() { }
+
+    func setupConstraints() { }
+
+    func setupAdditionalConfiguration() { }
 }

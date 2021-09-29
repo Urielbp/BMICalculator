@@ -12,15 +12,6 @@ class HomeView: UIView {
 
     // MARK: - Subviews
 
-    lazy var label: UILabel = {
-        let view = UILabel()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = "Banana"
-        view.textColor = DesignSystem.Colors.textStrong
-
-        return view
-    }()
-
     lazy var darkModeTextLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -35,6 +26,14 @@ class HomeView: UIView {
         let view = UISwitch()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.onTintColor = DesignSystem.Colors.primary
+
+        return view
+    }()
+
+    lazy var firstButton: MyButton = {
+        let view = MyButton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.setTitle("Botão", for: .normal)
 
         return view
     }()
@@ -57,13 +56,15 @@ class HomeView: UIView {
 
 extension HomeView: ViewCode {
     func buildViewHierarchy() {
-        addSubviews([label, darkModeTextLabel, darkModeToggle])
+        addSubviews([darkModeTextLabel, darkModeToggle, firstButton])
     }
 
     func setupConstraints() {
-        label.snp.makeConstraints { make in
+        firstButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
+            make.left.equalToSuperview().offset(DesignSystem.Margin.standard)
+            make.right.equalToSuperview().offset(-DesignSystem.Margin.standard)
         }
 
         darkModeTextLabel.snp.makeConstraints { make in

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B5C292F2703DE1700BB082D /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C292E2703DE1700BB082D /* MyButton.swift */; };
 		7B62C54C2703CA12008D6261 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62C54B2703CA12008D6261 /* AppDelegate.swift */; };
 		7B62C54E2703CA12008D6261 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62C54D2703CA12008D6261 /* SceneDelegate.swift */; };
 		7B62C5552703CA13008D6261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B62C5542703CA13008D6261 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B5C292E2703DE1700BB082D /* MyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
 		7B62C5482703CA12008D6261 /* MyViews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyViews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B62C54B2703CA12008D6261 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B62C54D2703CA12008D6261 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B5C292D2703DE0100BB082D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7B5C292E2703DE1700BB082D /* MyButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		7B62C53F2703CA12008D6261 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +151,7 @@
 		7B62C57B2703CAE8008D6261 /* Design System */ = {
 			isa = PBXGroup;
 			children = (
+				7B5C292D2703DE0100BB082D /* Views */,
 				7B62C58B2703D648008D6261 /* Extensions */,
 				7B62C5802703CC0F008D6261 /* Helpers */,
 				7B62C5812703CC6F008D6261 /* DesignSystem.swift */,
@@ -314,6 +325,7 @@
 				7B62C54C2703CA12008D6261 /* AppDelegate.swift in Sources */,
 				7B62C57F2703CB49008D6261 /* ViewCodeProtocol.swift in Sources */,
 				7B62C57D2703CB19008D6261 /* LoadableViewController.swift in Sources */,
+				7B5C292F2703DE1700BB082D /* MyButton.swift in Sources */,
 				7B62C5872703CD9B008D6261 /* HomeView.swift in Sources */,
 				7B62C5852703CD92008D6261 /* HomeViewController.swift in Sources */,
 				7B62C54E2703CA12008D6261 /* SceneDelegate.swift in Sources */,
