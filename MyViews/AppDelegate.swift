@@ -24,8 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func initalizeFirstViewController() {
         let window = UIWindow(frame: UIScreen.main.bounds)
         let homeViewController = HomeViewController()
+        let nav = UINavigationController(rootViewController: homeViewController)
 
-        window.rootViewController = homeViewController
+        window.rootViewController = nav
         self.window = window
         window.makeKeyAndVisible()
     }

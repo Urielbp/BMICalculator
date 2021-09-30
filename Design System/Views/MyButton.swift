@@ -35,5 +35,6 @@ extension MyButton: ViewCode {
     func setupAdditionalConfiguration() {
         backgroundColor = DesignSystem.Colors.primary
         setTitleColor(DesignSystem.Colors.backGround, for: .normal)
+        layer.cornerRadius = DesignSystem.CornerRadius.button
     }
 }

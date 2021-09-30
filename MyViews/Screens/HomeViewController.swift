@@ -13,7 +13,7 @@ class HomeViewController: LoadableViewController<HomeView> {
     // MARK: - Variables
 
     private lazy var viewModel = HomeViewModel()
-    private var viewModelSubscriber: AnyCancellable?
+    private var bag = Set<AnyCancellable>()
 
     // MARK: - Lyfecycle and constructors
 
@@ -35,11 +35,18 @@ class HomeViewController: LoadableViewController<HomeView> {
     // MARK: - Private functions
 
     private func setupBindings() {
-        viewModelSubscriber = viewModel.$darkMode.sink(receiveValue: userInterfaceStyleDidChange)
+        viewModel.$darkMode
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] darkMode in
+                guard let self = self else { return }
+                self.userInterfaceStyleDidChange(darkMode)
+            })
+            .store(in: &bag)
     }
 
     private func setupTargets() {
         customView.darkModeToggle.addTarget(self, action: #selector(didToggleDarkMode), for: .valueChanged)
+        customView.firstButton.addTarget(self, action: #selector(didTouchFirstButton), for: .touchUpInside)
     }
 
     private func userInterfaceStyleDidChange(_ darkModeEnabled: Bool) {
@@ -50,5 +57,10 @@ class HomeViewController: LoadableViewController<HomeView> {
 
     @objc private func didToggleDarkMode(_ sender: UISwitch) {
         viewModel.darkMode = sender.isOn
+    }
+
+    @objc private func didTouchFirstButton(_ sender: UIButton) {
+        let vc = HomeViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
