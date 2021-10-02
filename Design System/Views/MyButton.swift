@@ -34,7 +34,8 @@ extension MyButton: ViewCode {
 
     func setupAdditionalConfiguration() {
         backgroundColor = DesignSystem.Colors.primary
-        setTitleColor(DesignSystem.Colors.backGround, for: .normal)
+        setTitleColor(DesignSystem.Colors.background, for: .normal)
         layer.cornerRadius = DesignSystem.CornerRadius.button
+        titleLabel?.font = DesignSystem.Fonts.boldButton
     }
 }

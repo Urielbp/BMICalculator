@@ -23,6 +23,7 @@ final class DesignSystem {
     }
 
     struct Margin {
+        static let big: CGFloat = 36
         static let standard: CGFloat = 24
         static let small: CGFloat = 16
     }
@@ -37,10 +38,16 @@ final class DesignSystem {
         static let button: CGFloat = 18
     }
 
+    struct Fonts {
+        static let headerText: UIFont = UIFont.boldSystemFont(ofSize: FontSizes.header)
+        static let strongText: UIFont = UIFont.boldSystemFont(ofSize: FontSizes.text)
+        static let boldButton: UIFont = UIFont.boldSystemFont(ofSize: FontSizes.button)
+    }
+
     struct Colors {
         static let primary = UIColor(named: "Primary Color")
         static let textStrong = UIColor(named: "Text Strong")
-        static let backGround = UIColor(named: "Background Color")
+        static let background = UIColor(named: "Background Color")
         static let black = UIColor.black
         static let white = UIColor.white
         static let clear = UIColor.clear

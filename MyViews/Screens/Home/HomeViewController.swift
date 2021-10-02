@@ -46,7 +46,7 @@ class HomeViewController: LoadableViewController<HomeView> {
 
     private func setupTargets() {
         customView.darkModeToggle.addTarget(self, action: #selector(didToggleDarkMode), for: .valueChanged)
-        customView.firstButton.addTarget(self, action: #selector(didTouchFirstButton), for: .touchUpInside)
+        customView.bodyMassCalculatorButton.addTarget(self, action: #selector(didTouchFirstButton), for: .touchUpInside)
     }
 
     private func userInterfaceStyleDidChange(_ darkModeEnabled: Bool) {
@@ -60,7 +60,7 @@ class HomeViewController: LoadableViewController<HomeView> {
     }
 
     @objc private func didTouchFirstButton(_ sender: UIButton) {
-        let vc = HomeViewController()
+        let vc = HeightInputViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 }

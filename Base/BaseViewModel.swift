@@ -1,14 +1,13 @@
 //
-//  HomeViewModel.swift
+//  BaseViewModel.swift
 //  MyViews
 //
-//  Created by Uriel Barbosa Pinheiro on 29/09/21.
+//  Created by Uriel Barbosa Pinheiro on 02/10/21.
 //
 
 import Foundation
-import UIKit
 
-class HomeViewModel {
+class BaseViewModel {
 
     // MARK: - Bindable variables
 
@@ -23,4 +22,5 @@ class HomeViewModel {
     init() {
         darkMode = UserDefaultsImplementation.get(bool: .darkModeEnabled)
     }
+
 }

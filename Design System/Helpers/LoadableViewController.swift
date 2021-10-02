@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-// Fonte: https://movile.blog/escrevendo-view-code-mais-limpo-usando-loadview/
+// Source: https://movile.blog/escrevendo-view-code-mais-limpo-usando-loadview/
 
 class LoadableViewController<CustomView: UIView>: UIViewController {
     var customView: CustomView {

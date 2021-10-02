@@ -18,7 +18,6 @@ class HomeView: UIView {
         view.text = "Dark mode"
         view.textColor = DesignSystem.Colors.textStrong
 
-
         return view
     }()
 
@@ -30,10 +29,10 @@ class HomeView: UIView {
         return view
     }()
 
-    lazy var firstButton: MyButton = {
+    lazy var bodyMassCalculatorButton: MyButton = {
         let view = MyButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setTitle("Botão", for: .normal)
+        view.setTitle("Calculate Body Mass Index", for: .normal)
 
         return view
     }()
@@ -56,11 +55,11 @@ class HomeView: UIView {
 
 extension HomeView: ViewCode {
     func buildViewHierarchy() {
-        addSubviews([darkModeTextLabel, darkModeToggle, firstButton])
+        addSubviews([darkModeTextLabel, darkModeToggle, bodyMassCalculatorButton])
     }
 
     func setupConstraints() {
-        firstButton.snp.makeConstraints { make in
+        bodyMassCalculatorButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
             make.left.equalToSuperview().offset(DesignSystem.Margin.standard)
@@ -80,6 +79,6 @@ extension HomeView: ViewCode {
     }
 
     func setupAdditionalConfiguration() {
-        backgroundColor = DesignSystem.Colors.backGround
+        backgroundColor = DesignSystem.Colors.background
     }
 }
