@@ -19,7 +19,7 @@ class HeightInputViewModel: BaseViewModel {
     var errorMessage: String? = nil
 
     // MARK: - Private variables
-    
+
     private var error: CustomError? {
         willSet {
             errorMessage = newValue?.localizedDescription ?? nil
