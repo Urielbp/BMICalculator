@@ -8,11 +8,15 @@
 import Foundation
 
 class BMIResultViewModel: BaseViewModel {
-    // MARK: - Bindable variables
+
+    // MARK: - Variables
+
+    var bmi: String = ""
+
+    // MARK: - Private variables
 
     private var height: Float?
     private var weight: Float?
-    @Published var bmi: String = ""
 
     // MARK: - Lyfecycle and constructors
 
@@ -22,6 +26,8 @@ class BMIResultViewModel: BaseViewModel {
         super.init()
         calculateBMI()
     }
+
+    // MARK: - Private functions
 
     private func calculateBMI() {
         guard let height = height,

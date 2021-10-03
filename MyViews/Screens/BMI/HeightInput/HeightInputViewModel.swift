@@ -9,17 +9,17 @@ import Foundation
 
 class HeightInputViewModel: BaseViewModel {
 
-    // MARK: - Bindable variables
+    // MARK: - Variables
 
-    @Published var height: Float? {
+    var height: Float? {
         didSet {
             validateHeight()
         }
     }
-    @Published var errorMessage: String? = nil
+    var errorMessage: String? = nil
 
-    // MARK: - Variables
-
+    // MARK: - Private variables
+    
     private var error: CustomError? {
         willSet {
             errorMessage = newValue?.localizedDescription ?? nil

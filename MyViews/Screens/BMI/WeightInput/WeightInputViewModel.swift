@@ -9,17 +9,17 @@ import Foundation
 
 class WeightInputViewModel: BaseViewModel {
 
-    // MARK: - Bindable variables
+    // MARK: - Variables
 
-    @Published var weight: Float? {
+    var weight: Float? {
         didSet {
             validateWeight()
         }
     }
-    @Published var errorMessage: String? = nil
+    var errorMessage: String? = nil
 
-    // MARK: - Variables
-
+    // MARK: - Private variables
+    
     private var error: CustomError? {
         willSet {
             errorMessage = newValue?.localizedDescription ?? nil
