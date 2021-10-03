@@ -12,23 +12,6 @@ class HomeView: UIView {
 
     // MARK: - Subviews
 
-    lazy var darkModeTextLabel: UILabel = {
-        let view = UILabel()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = "Dark mode"
-        view.textColor = DesignSystem.Colors.textStrong
-
-        return view
-    }()
-
-    lazy var darkModeToggle: UISwitch = {
-        let view = UISwitch()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.onTintColor = DesignSystem.Colors.primary
-
-        return view
-    }()
-
     lazy var bodyMassCalculatorButton: MyButton = {
         let view = MyButton()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -36,6 +19,24 @@ class HomeView: UIView {
 
         return view
     }()
+
+    lazy var settingsButton: MyButton = {
+        let view = MyButton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.setTitle("Settings", for: .normal)
+
+        return view
+    }()
+
+    lazy var contentStackView: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [bodyMassCalculatorButton, settingsButton])
+        view.axis = .vertical
+        view.spacing = DesignSystem.Margin.small
+        view.translatesAutoresizingMaskIntoConstraints = false
+
+        return view
+    }()
+
 
 
     // MARK: - Lifecycle
@@ -55,26 +56,15 @@ class HomeView: UIView {
 
 extension HomeView: ViewCode {
     func buildViewHierarchy() {
-        addSubviews([darkModeTextLabel, darkModeToggle, bodyMassCalculatorButton])
+        addSubviews([contentStackView])
     }
 
     func setupConstraints() {
-        bodyMassCalculatorButton.snp.makeConstraints { make in
+        contentStackView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
             make.left.equalToSuperview().offset(DesignSystem.Margin.standard)
             make.right.equalToSuperview().offset(-DesignSystem.Margin.standard)
-        }
-
-        darkModeTextLabel.snp.makeConstraints { make in
-            make.top.equalTo(darkModeToggle.snp.top)
-            make.right.equalTo(darkModeToggle.snp.left).offset(-DesignSystem.Margin.small)
-            make.centerY.equalTo(darkModeToggle.snp.centerY)
-        }
-
-        darkModeToggle.snp.makeConstraints { make in
-            make.top.equalTo(self.snp.topMargin).offset(DesignSystem.Margin.standard)
-            make.right.equalTo(self.snp.right).offset(-DesignSystem.Margin.standard)
         }
     }
 

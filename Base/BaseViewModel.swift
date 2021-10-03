@@ -11,16 +11,13 @@ class BaseViewModel {
 
     // MARK: - Bindable variables
 
-    @Published var darkMode: Bool {
+    @Published var darkMode: Bool = UserDefaultsImplementation.get(bool: .darkModeEnabled) {
         didSet {
             UserDefaultsImplementation.set(bool: .darkModeEnabled, newValue: darkMode)
         }
     }
 
-    // MARK: - Lyfecycle and constructors
-
-    init() {
+    func forceUpdate() {
         darkMode = UserDefaultsImplementation.get(bool: .darkModeEnabled)
     }
-
 }
