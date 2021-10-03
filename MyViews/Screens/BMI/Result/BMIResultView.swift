@@ -17,6 +17,8 @@ class BMIResultView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.textColor = DesignSystem.Colors.textStrong
         view.font = DesignSystem.Fonts.titleText
+        view.numberOfLines = 0
+        view.textAlignment = .center
 
         return view
     }()
@@ -59,19 +61,6 @@ class BMIResultView: UIView {
         super.init(coder: coder)
         setupView()
     }
-
-    // MARK: - Functions
-
-    func setupViewForKeyboard(show: Bool, height: CGFloat, animationDuration: Double) {
-        let contraintHeight = show ? height : DesignSystem.Margin.standard
-
-        UIView.animate(withDuration: animationDuration) {
-            self.continueButton.snp.updateConstraints { make in
-                make.bottom.equalTo(self.snp.bottomMargin).offset(-contraintHeight)
-            }
-            self.layoutIfNeeded()
-        }
-    }
 }
 
 // MARK: - ViewCode
@@ -86,6 +75,8 @@ extension BMIResultView: ViewCode {
         contentStackView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
+            make.left.equalToSuperview().offset(DesignSystem.Margin.standard)
+            make.right.equalToSuperview().offset(-DesignSystem.Margin.standard)
         }
 
         continueButton.snp.makeConstraints { make in
