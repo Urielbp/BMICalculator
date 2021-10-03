@@ -9,4 +9,62 @@ import Foundation
 
 class HeightInputViewModel: BaseViewModel {
 
+    // MARK: - Bindable variables
+
+    @Published var height: Float? {
+        didSet {
+            validateHeight()
+        }
+    }
+    @Published var errorMessage: String? = nil
+
+    // MARK: - Variables
+
+    private var error: CustomError? {
+        willSet {
+            errorMessage = newValue?.localizedDescription ?? nil
+        }
+    }
+
+    // MARK: - Enums
+
+    enum CustomError: Error {
+        case noInput
+        case heightIsNotPositive
+    }
+
+    // MARK: - Lyfecycle and constructors
+
+    override init() {
+        super.init()
+        validateHeight()
+    }
+
+    // MARK: - Private functions
+
+    private func validateHeight() {
+        guard let height = height else {
+            error = .noInput
+            return
+        }
+
+        guard height > .zero else {
+            error = .heightIsNotPositive
+            return
+        }
+        error = nil
+    }
+}
+
+// MARK: - Variables
+
+extension HeightInputViewModel.CustomError: LocalizedError {
+    var errorDescription: String? {
+        switch self {
+        case .noInput:
+            return "Please enter some value"
+        case .heightIsNotPositive:
+            return "Please enter a positive value for your height"
+        }
+    }
 }

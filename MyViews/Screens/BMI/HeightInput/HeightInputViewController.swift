@@ -20,8 +20,9 @@ class HeightInputViewController: LoadableViewController<HeightInputView> {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
-//        setupTargets()
-        setupToHideKeyboardOnTapOnView()
+        setupTargets()
+        setupDelegates()
+//        setupToHideKeyboardOnTapOnView()
         registerKeyboardNotifications()
     }
 
@@ -65,6 +66,31 @@ class HeightInputViewController: LoadableViewController<HeightInputView> {
     private func userInterfaceStyleDidChange(_ darkModeEnabled: Bool) {
         overrideUserInterfaceStyle = darkModeEnabled ? .dark : .light
         setNeedsStatusBarAppearanceUpdate()
-//        customView.darkModeToggle.isOn = darkModeEnabled
+    }
+
+
+    private func setupTargets() {
+        customView.continueButton.addTarget(self, action: #selector(didTouchContinueButton), for: .touchUpInside)
+    }
+
+    private func setupDelegates() {
+        customView.heightTextField.delegate = self
+    }
+
+    @objc private func didTouchContinueButton(_ sender: UIButton) {
+        if let error = viewModel.errorMessage {
+            presentAlert(message: error)
+        } else {
+            // next screen
+        }
+    }
+}
+
+// MARK: - UITextViewDelegate
+
+extension HeightInputViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        guard let text = textField.text else { return }
+        viewModel.height = Float(text)
     }
 }

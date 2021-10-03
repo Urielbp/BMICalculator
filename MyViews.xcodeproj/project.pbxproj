@@ -30,6 +30,7 @@
 		7B62C5872703CD9B008D6261 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62C5862703CD9B008D6261 /* HomeView.swift */; };
 		7B62C58A2703CE48008D6261 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7B62C5892703CE48008D6261 /* SnapKit */; };
 		7B62C58D2703D69F008D6261 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62C58C2703D69F008D6261 /* UIView+Layout.swift */; };
+		7B7D87FE270A3D1D0076E21D /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7D87FD270A3D1D0076E21D /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		7B62C5842703CD92008D6261 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7B62C5862703CD9B008D6261 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7B62C58C2703D69F008D6261 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		7B7D87FD270A3D1D0076E21D /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +258,7 @@
 				7B62C58C2703D69F008D6261 /* UIView+Layout.swift */,
 				7B52693727068DB200DB8C50 /* UITextField+Padding.swift */,
 				7B41F3862708DCD20099F853 /* UIViewController+HideKeyboard.swift */,
+				7B7D87FD270A3D1D0076E21D /* UIViewController+Alert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				7B526932270687C700DB8C50 /* HeightInputView.swift in Sources */,
 				7B62C5852703CD92008D6261 /* HomeViewController.swift in Sources */,
 				7B52693827068DB200DB8C50 /* UITextField+Padding.swift in Sources */,
+				7B7D87FE270A3D1D0076E21D /* UIViewController+Alert.swift in Sources */,
 				7B62C54E2703CA12008D6261 /* SceneDelegate.swift in Sources */,
 				7B526936270687DC00DB8C50 /* HeightInputViewModel.swift in Sources */,
 			);
