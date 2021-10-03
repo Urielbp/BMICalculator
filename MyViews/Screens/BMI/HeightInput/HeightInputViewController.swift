@@ -55,7 +55,7 @@ class HeightInputViewController: LoadableViewController<GenericInputView> {
 
     private func setupView() {
         customView.titleTextLabel.text = "Insert your height"
-        customView.descriptionTextLabel.text = "in meters"
+        customView.descriptionTextLabel.text = "in \(viewModel.heightUnit)"
     }
 
     private func setupBindings() {

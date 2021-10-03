@@ -16,6 +16,7 @@ class HeightInputViewModel: BaseViewModel {
             validateHeight()
         }
     }
+    var heightUnit: String = UserDefaultsImplementation.get(string: .heightUnit) ?? ""
     var errorMessage: String? = nil
 
     // MARK: - Private variables
@@ -56,7 +57,7 @@ class HeightInputViewModel: BaseViewModel {
     }
 }
 
-// MARK: - Variables
+// MARK: - Error message handling
 
 extension HeightInputViewModel.CustomError: LocalizedError {
     var errorDescription: String? {

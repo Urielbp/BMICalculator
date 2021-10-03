@@ -9,6 +9,10 @@ import Foundation
 
 class BMIResultViewModel: BaseViewModel {
 
+    // MARK: - Constants
+
+    private let kImperialMultipler: Float = 703
+
     // MARK: - Variables
 
     var bmi: String = ""
@@ -17,6 +21,10 @@ class BMIResultViewModel: BaseViewModel {
 
     private var height: Float?
     private var weight: Float?
+    private var heightUnit = UserDefaultsImplementation.get(string: .heightUnit)
+    private lazy var isMetricSystem: Bool = {
+        heightUnit == HeightUnit.meters.rawValue
+    }()
 
     // MARK: - Lyfecycle and constructors
 
@@ -32,7 +40,7 @@ class BMIResultViewModel: BaseViewModel {
     private func calculateBMI() {
         guard let height = height,
               let weight = weight else { return  }
-        let bmi = weight / (pow(height, 2))
+        let bmi = isMetricSystem ? (weight / (pow(height, 2))) :(weight / (pow(height, 2)) * kImperialMultipler)
         self.bmi = String(format: "%.1f", bmi)
     }
 }

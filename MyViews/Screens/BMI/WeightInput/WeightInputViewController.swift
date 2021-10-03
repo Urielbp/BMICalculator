@@ -58,7 +58,7 @@ class WeightInputViewController: LoadableViewController<GenericInputView> {
 
     private func setupView() {
         customView.titleTextLabel.text = "Insert your weight"
-        customView.descriptionTextLabel.text = "in kilos"
+        customView.descriptionTextLabel.text = "in \(viewModel.weightUnit)"
     }
 
     private func setupBindings() {

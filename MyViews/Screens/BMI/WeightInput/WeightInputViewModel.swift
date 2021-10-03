@@ -16,6 +16,7 @@ class WeightInputViewModel: BaseViewModel {
             validateWeight()
         }
     }
+    var weightUnit: String = UserDefaultsImplementation.get(string: .weightUnit) ?? ""
     var errorMessage: String? = nil
 
     // MARK: - Private variables
@@ -56,7 +57,7 @@ class WeightInputViewModel: BaseViewModel {
     }
 }
 
-// MARK: - Variables
+// MARK: - Error message handling
 
 extension WeightInputViewModel.CustomError: LocalizedError {
     var errorDescription: String? {
