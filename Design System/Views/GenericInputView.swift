@@ -1,5 +1,5 @@
 //
-//  HeightInputView.swift
+//  GenericInputView.swift
 //  MyViews
 //
 //  Created by Uriel Barbosa Pinheiro on 30/09/21.
@@ -8,16 +8,24 @@
 import Foundation
 import UIKit
 
-class HeightInputView: UIView {
+class GenericInputView: UIView {
     
     // MARK: - Subviews
 
     lazy var titleTextLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = "Insert your height"
         view.textColor = DesignSystem.Colors.textStrong
         view.font = DesignSystem.Fonts.headerText
+
+        return view
+    }()
+
+    lazy var descriptionTextLabel: UILabel = {
+        let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.textColor = DesignSystem.Colors.textStrong
+        view.font = DesignSystem.Fonts.strongText
 
         return view
     }()
@@ -78,19 +86,26 @@ class HeightInputView: UIView {
 
 // MARK: - ViewCode
 
-extension HeightInputView: ViewCode {
+extension GenericInputView: ViewCode {
     func buildViewHierarchy() {
-        addSubviews([titleTextLabel, heightTextField, continueButton])
+        addSubviews([titleTextLabel, descriptionTextLabel, heightTextField, continueButton])
     }
 
     func setupConstraints() {
         titleTextLabel.snp.makeConstraints { make in
             make.top.equalTo(self.snp.topMargin).offset(DesignSystem.Margin.big)
-            make.centerX.equalToSuperview()
+            make.left.equalToSuperview().offset(DesignSystem.Margin.standard)
+            make.right.equalToSuperview().offset(-DesignSystem.Margin.standard)
+        }
+
+        descriptionTextLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleTextLabel.snp.bottom).offset(DesignSystem.Margin.small)
+            make.left.equalTo(titleTextLabel.snp.left)
+            make.right.equalTo(titleTextLabel.snp.right)
         }
 
         heightTextField.snp.makeConstraints { make in
-            make.top.equalTo(titleTextLabel.snp.bottom).offset(DesignSystem.Margin.small)
+            make.top.equalTo(descriptionTextLabel.snp.bottom).offset(DesignSystem.Margin.small)
             make.leading.equalTo(self.snp.leading).offset(DesignSystem.Margin.standard)
             make.trailing.equalTo(self.snp.trailing).offset(-DesignSystem.Margin.standard)
             make.height.equalTo(DesignSystem.Height.buttonHeight)

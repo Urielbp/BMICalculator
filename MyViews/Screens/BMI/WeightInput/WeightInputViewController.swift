@@ -1,19 +1,22 @@
 //
-//  HeightInputViewController.swift
+//  WeightInputViewController.swift
 //  MyViews
 //
-//  Created by Uriel Barbosa Pinheiro on 30/09/21.
+//  Created by Uriel Barbosa Pinheiro on 03/10/21.
 //
 
 import Combine
 import UIKit
 
-class HeightInputViewController: LoadableViewController<GenericInputView> {
+class WeightInputViewController: LoadableViewController<GenericInputView> {
 
     // MARK: - Variables
 
-    private lazy var viewModel = HeightInputViewModel()
+    private lazy var viewModel = WeightInputViewModel()
     private var bag = Set<AnyCancellable>()
+
+    // MARK: Refactor to use coordinators
+    var height: Float?
 
     // MARK: - Lyfecycle and constructors
 
@@ -54,8 +57,8 @@ class HeightInputViewController: LoadableViewController<GenericInputView> {
     // MARK: - Private functions
 
     private func setupView() {
-        customView.titleTextLabel.text = "Insert your height"
-        customView.descriptionTextLabel.text = "in meters"
+        customView.titleTextLabel.text = "Insert your weight"
+        customView.descriptionTextLabel.text = "in kilos"
     }
 
     private func setupBindings() {
@@ -86,19 +89,16 @@ class HeightInputViewController: LoadableViewController<GenericInputView> {
         if let error = viewModel.errorMessage {
             presentAlert(message: error)
         } else {
-            customView.heightTextField.endEditing(true)
-            let vc = WeightInputViewController()
-            vc.height = viewModel.height
-            navigationController?.pushViewController(vc, animated: true)
+            // next screen
         }
     }
 }
 
 // MARK: - UITextViewDelegate
 
-extension HeightInputViewController: UITextFieldDelegate {
+extension WeightInputViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         guard let text = textField.text else { return }
-        viewModel.height = Float(text)
+        viewModel.weight = Float(text)
     }
 }
