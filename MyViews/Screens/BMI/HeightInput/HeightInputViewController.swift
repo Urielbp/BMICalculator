@@ -73,7 +73,6 @@ class HeightInputViewController: LoadableViewController<GenericInputView> {
         setNeedsStatusBarAppearanceUpdate()
     }
 
-
     private func setupTargets() {
         customView.continueButton.addTarget(self, action: #selector(didTouchContinueButton), for: .touchUpInside)
     }

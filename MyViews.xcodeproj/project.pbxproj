@@ -32,6 +32,9 @@
 		7B62C58D2703D69F008D6261 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62C58C2703D69F008D6261 /* UIView+Layout.swift */; };
 		7B683478270A429D0021A27C /* WeightInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B683477270A429D0021A27C /* WeightInputViewController.swift */; };
 		7B68347A270A42AD0021A27C /* WeightInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B683479270A42AD0021A27C /* WeightInputViewModel.swift */; };
+		7B68347F270A4BEB0021A27C /* BMIResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68347E270A4BEB0021A27C /* BMIResultViewController.swift */; };
+		7B683481270A4BF90021A27C /* BMIResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B683480270A4BF90021A27C /* BMIResultViewModel.swift */; };
+		7B683485270A4C0C0021A27C /* BMIResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B683484270A4C0C0021A27C /* BMIResultView.swift */; };
 		7B7D87FE270A3D1D0076E21D /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7D87FD270A3D1D0076E21D /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +86,9 @@
 		7B62C58C2703D69F008D6261 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		7B683477270A429D0021A27C /* WeightInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightInputViewController.swift; sourceTree = "<group>"; };
 		7B683479270A42AD0021A27C /* WeightInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightInputViewModel.swift; sourceTree = "<group>"; };
+		7B68347E270A4BEB0021A27C /* BMIResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIResultViewController.swift; sourceTree = "<group>"; };
+		7B683480270A4BF90021A27C /* BMIResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIResultViewModel.swift; sourceTree = "<group>"; };
+		7B683484270A4C0C0021A27C /* BMIResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIResultView.swift; sourceTree = "<group>"; };
 		7B7D87FD270A3D1D0076E21D /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +139,7 @@
 		7B52692F270685C300DB8C50 /* BMI */ = {
 			isa = PBXGroup;
 			children = (
+				7B68347D270A4BD80021A27C /* Result */,
 				7B683476270A41FD0021A27C /* WeightInput */,
 				7B526930270685CB00DB8C50 /* HeightInput */,
 			);
@@ -277,6 +284,16 @@
 			path = WeightInput;
 			sourceTree = "<group>";
 		};
+		7B68347D270A4BD80021A27C /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				7B68347E270A4BEB0021A27C /* BMIResultViewController.swift */,
+				7B683484270A4C0C0021A27C /* BMIResultView.swift */,
+				7B683480270A4BF90021A27C /* BMIResultViewModel.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -418,14 +435,17 @@
 				7B559F74270545C800D4478D /* UserDefaultsProviderProtocol.swift in Sources */,
 				7B62C54C2703CA12008D6261 /* AppDelegate.swift in Sources */,
 				7B683478270A429D0021A27C /* WeightInputViewController.swift in Sources */,
+				7B68347F270A4BEB0021A27C /* BMIResultViewController.swift in Sources */,
 				7B559F76270545E800D4478D /* UserDefaultsImplementation.swift in Sources */,
 				7B559F70270535B400D4478D /* HomeViewModel.swift in Sources */,
 				7B526934270687D500DB8C50 /* HeightInputViewController.swift in Sources */,
 				7B62C57F2703CB49008D6261 /* ViewCodeProtocol.swift in Sources */,
 				7B41F3872708DCD20099F853 /* UIViewController+HideKeyboard.swift in Sources */,
+				7B683481270A4BF90021A27C /* BMIResultViewModel.swift in Sources */,
 				7B62C57D2703CB19008D6261 /* LoadableViewController.swift in Sources */,
 				7B68347A270A42AD0021A27C /* WeightInputViewModel.swift in Sources */,
 				7B5C292F2703DE1700BB082D /* MyButton.swift in Sources */,
+				7B683485270A4C0C0021A27C /* BMIResultView.swift in Sources */,
 				7B62C5872703CD9B008D6261 /* HomeView.swift in Sources */,
 				7B526932270687C700DB8C50 /* GenericInputView.swift in Sources */,
 				7B62C5852703CD92008D6261 /* HomeViewController.swift in Sources */,

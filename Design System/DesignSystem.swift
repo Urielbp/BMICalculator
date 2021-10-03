@@ -33,12 +33,14 @@ final class DesignSystem {
     }
 
     struct FontSizes {
+        static let title: CGFloat = 56
         static let header: CGFloat = 28
         static let text: CGFloat = 14
         static let button: CGFloat = 18
     }
 
     struct Fonts {
+        static let titleText: UIFont = UIFont.boldSystemFont(ofSize: FontSizes.title)
         static let headerText: UIFont = UIFont.boldSystemFont(ofSize: FontSizes.header)
         static let strongText: UIFont = UIFont.boldSystemFont(ofSize: FontSizes.text)
         static let boldButton: UIFont = UIFont.boldSystemFont(ofSize: FontSizes.button)

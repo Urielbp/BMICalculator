@@ -15,7 +15,7 @@ class WeightInputViewController: LoadableViewController<GenericInputView> {
     private lazy var viewModel = WeightInputViewModel()
     private var bag = Set<AnyCancellable>()
 
-    // MARK: Refactor to use coordinators
+    // TODO: Refactor to use coordinators
     var height: Float?
 
     // MARK: - Lyfecycle and constructors
@@ -76,7 +76,6 @@ class WeightInputViewController: LoadableViewController<GenericInputView> {
         setNeedsStatusBarAppearanceUpdate()
     }
 
-
     private func setupTargets() {
         customView.continueButton.addTarget(self, action: #selector(didTouchContinueButton), for: .touchUpInside)
     }
@@ -89,7 +88,11 @@ class WeightInputViewController: LoadableViewController<GenericInputView> {
         if let error = viewModel.errorMessage {
             presentAlert(message: error)
         } else {
-            // next screen
+            customView.heightTextField.endEditing(true)
+            let vc = BMIResultViewController()
+            vc.height = height
+            vc.weight = viewModel.weight
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
