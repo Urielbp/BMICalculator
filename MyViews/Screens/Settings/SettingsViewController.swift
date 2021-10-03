@@ -21,6 +21,8 @@ class SettingsViewController: LoadableViewController<SettingsView> {
         super.viewDidLoad()
         setupBindings()
         setupTargets()
+        setupDelegates()
+        setupView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +50,15 @@ class SettingsViewController: LoadableViewController<SettingsView> {
         customView.darkModeToggle.addTarget(self, action: #selector(didToggleDarkMode), for: .valueChanged)
     }
 
+    private func setupDelegates() {
+        customView.unitsPicker.delegate = self
+        customView.unitsPicker.dataSource = self
+    }
+
+    private func setupView() {
+        customView.unitsPicker.selectRow(viewModel.selectedPickerIndex, inComponent: 0, animated: true)
+    }
+
     private func userInterfaceStyleDidChange(_ darkModeEnabled: Bool) {
         overrideUserInterfaceStyle = darkModeEnabled ? .dark : .light
         setNeedsStatusBarAppearanceUpdate()
@@ -56,5 +67,25 @@ class SettingsViewController: LoadableViewController<SettingsView> {
 
     @objc private func didToggleDarkMode(_ sender: UISwitch) {
         viewModel.darkMode = sender.isOn
+    }
+}
+
+// MARK: - UIPickerViewDelegate, UIPickerViewDataSource
+
+extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        viewModel.unitsPickerOptions.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        viewModel.unitsPickerOptions[row]
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        viewModel.selectedPickerIndex = row
     }
 }

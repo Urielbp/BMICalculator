@@ -37,8 +37,6 @@ class HomeView: UIView {
         return view
     }()
 
-
-
     // MARK: - Lifecycle
 
     override init(frame: CGRect) {

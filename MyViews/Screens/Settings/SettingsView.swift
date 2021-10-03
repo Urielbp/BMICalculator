@@ -10,7 +10,27 @@ import UIKit
 
 class SettingsView: UIView {
 
+    // MARK: - Constants
+
+    private let kPickerHeight: CGFloat = 100
+
     // MARK: - Subviews
+
+    lazy var contentStackView: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [darkModeRowStackView, divider, unitsTextLabel, unitsPicker])
+        view.axis = .vertical
+        view.spacing = DesignSystem.Margin.standard
+        view.translatesAutoresizingMaskIntoConstraints = false
+
+        return view
+    }()
+
+    lazy var darkModeRowStackView: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [darkModeTextLabel, darkModeToggle])
+        view.translatesAutoresizingMaskIntoConstraints = false
+
+        return view
+    }()
 
     lazy var darkModeTextLabel: UILabel = {
         let view = UILabel()
@@ -25,6 +45,30 @@ class SettingsView: UIView {
         let view = UISwitch()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.onTintColor = DesignSystem.Colors.primary
+
+        return view
+    }()
+
+    lazy var unitsTextLabel: UILabel = {
+        let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.text = "Unit used"
+        view.textColor = DesignSystem.Colors.textStrong
+
+        return view
+    }()
+
+    lazy var unitsPicker: UIPickerView = {
+        let view = UIPickerView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+
+        return view
+    }()
+
+    lazy var divider: UIView = {
+        let view = UIView()
+        view.backgroundColor = DesignSystem.Colors.backgroundAlpha
+        view.translatesAutoresizingMaskIntoConstraints = false
 
         return view
     }()
@@ -46,19 +90,23 @@ class SettingsView: UIView {
 
 extension SettingsView: ViewCode {
     func buildViewHierarchy() {
-        addSubviews([darkModeTextLabel, darkModeToggle])
+        addSubviews([contentStackView])
     }
 
     func setupConstraints() {
-        darkModeTextLabel.snp.makeConstraints { make in
-            make.top.equalTo(darkModeToggle.snp.top)
-            make.right.equalTo(darkModeToggle.snp.left).offset(-DesignSystem.Margin.small)
-            make.centerY.equalTo(darkModeToggle.snp.centerY)
+        contentStackView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.left.equalToSuperview().offset(DesignSystem.Margin.standard)
+            make.right.equalToSuperview().offset(-DesignSystem.Margin.standard)
         }
 
-        darkModeToggle.snp.makeConstraints { make in
-            make.top.equalTo(self.snp.topMargin).offset(DesignSystem.Margin.standard)
-            make.right.equalTo(self.snp.right).offset(-DesignSystem.Margin.standard)
+        unitsPicker.snp.makeConstraints { make in
+            make.height.equalTo(kPickerHeight)
+        }
+
+        divider.snp.makeConstraints { make in
+            make.height.equalTo(DesignSystem.Height.smallDivider)
         }
     }
 

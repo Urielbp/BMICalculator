@@ -18,4 +18,20 @@ class UserDefaultsImplementation: UserDefaultsProviderProtocol {
     static func set(bool key: UserDefaultsBoolOptions, newValue: Bool) {
         defaults.set(newValue, forKey: key.rawValue)
     }
+
+    static func get(string key: UserDefaultsStringOptions) -> String? {
+        defaults.string(forKey: key.rawValue)
+    }
+
+    static func set(string key: UserDefaultsStringOptions, newValue: String?) {
+        defaults.setValue(newValue, forKey: key.rawValue)
+    }
+
+    static func get(int key: UserDefaultsIntOptions) -> Int? {
+        defaults.integer(forKey: key.rawValue)
+    }
+
+    static func set(int key: UserDefaultsIntOptions, newValue: Int?) {
+        defaults.setValue(newValue, forKey: key.rawValue)
+    }
 }

@@ -38,6 +38,7 @@
 		7B683488270A554B0021A27C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B683487270A554B0021A27C /* SettingsView.swift */; };
 		7B68348A270A55560021A27C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B683489270A55560021A27C /* SettingsViewController.swift */; };
 		7B68348C270A555D0021A27C /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68348B270A555D0021A27C /* SettingsViewModel.swift */; };
+		7B68348E270A6F750021A27C /* Collection+SafeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68348D270A6F750021A27C /* Collection+SafeSubscript.swift */; };
 		7B7D87FE270A3D1D0076E21D /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7D87FD270A3D1D0076E21D /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,7 @@
 		7B683487270A554B0021A27C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7B683489270A55560021A27C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7B68348B270A555D0021A27C /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		7B68348D270A6F750021A27C /* Collection+SafeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+SafeSubscript.swift"; sourceTree = "<group>"; };
 		7B7D87FD270A3D1D0076E21D /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -278,6 +280,7 @@
 				7B52693727068DB200DB8C50 /* UITextField+Padding.swift */,
 				7B41F3862708DCD20099F853 /* UIViewController+HideKeyboard.swift */,
 				7B7D87FD270A3D1D0076E21D /* UIViewController+Alert.swift */,
+				7B68348D270A6F750021A27C /* Collection+SafeSubscript.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				7B559F76270545E800D4478D /* UserDefaultsImplementation.swift in Sources */,
 				7B559F70270535B400D4478D /* HomeViewModel.swift in Sources */,
 				7B526934270687D500DB8C50 /* HeightInputViewController.swift in Sources */,
+				7B68348E270A6F750021A27C /* Collection+SafeSubscript.swift in Sources */,
 				7B62C57F2703CB49008D6261 /* ViewCodeProtocol.swift in Sources */,
 				7B41F3872708DCD20099F853 /* UIViewController+HideKeyboard.swift in Sources */,
 				7B683481270A4BF90021A27C /* BMIResultViewModel.swift in Sources */,

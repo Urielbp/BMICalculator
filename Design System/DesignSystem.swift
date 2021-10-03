@@ -16,6 +16,7 @@ final class DesignSystem {
 
     struct Height {
         static let buttonHeight: CGFloat = 48
+        static let smallDivider: CGFloat = 1
     }
 
     struct Padding {
@@ -50,6 +51,7 @@ final class DesignSystem {
         static let primary = UIColor(named: "Primary Color")
         static let textStrong = UIColor(named: "Text Strong")
         static let background = UIColor(named: "Background Color")
+        static let backgroundAlpha = UIColor(named: "Separator Color")
         static let black = UIColor.black
         static let white = UIColor.white
         static let clear = UIColor.clear
