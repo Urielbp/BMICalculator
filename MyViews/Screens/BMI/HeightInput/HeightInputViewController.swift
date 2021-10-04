@@ -12,10 +12,19 @@ class HeightInputViewController: LoadableViewController<GenericInputView> {
 
     // MARK: - Variables
 
-    private lazy var viewModel = HeightInputViewModel()
+    private var viewModel: HeightInputViewModel
     private var bag = Set<AnyCancellable>()
 
     // MARK: - Lyfecycle and constructors
+
+    required init?(coder aDecoder: NSCoder) {
+          fatalError()
+      }
+
+    init(viewModel: HeightInputViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,9 +95,7 @@ class HeightInputViewController: LoadableViewController<GenericInputView> {
             presentAlert(message: error)
         } else {
             customView.heightTextField.endEditing(true)
-            let vc = WeightInputViewController()
-            vc.height = viewModel.height
-            navigationController?.pushViewController(vc, animated: true)
+            viewModel.navigateToNextScreen()
         }
     }
 }

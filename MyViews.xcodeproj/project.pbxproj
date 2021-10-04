@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7B41F3852708C3880099F853 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B41F3842708C3880099F853 /* BaseViewModel.swift */; };
 		7B41F3872708DCD20099F853 /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B41F3862708DCD20099F853 /* UIViewController+HideKeyboard.swift */; };
+		7B463C37270AB2BC0070AE39 /* Coordinator+Fullscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B463C36270AB2BC0070AE39 /* Coordinator+Fullscreen.swift */; };
 		7B526932270687C700DB8C50 /* GenericInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B526931270687C700DB8C50 /* GenericInputView.swift */; };
 		7B526934270687D500DB8C50 /* HeightInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B526933270687D500DB8C50 /* HeightInputViewController.swift */; };
 		7B526936270687DC00DB8C50 /* HeightInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B526935270687DC00DB8C50 /* HeightInputViewModel.swift */; };
@@ -18,7 +19,6 @@
 		7B559F76270545E800D4478D /* UserDefaultsImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B559F75270545E800D4478D /* UserDefaultsImplementation.swift */; };
 		7B5C292F2703DE1700BB082D /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C292E2703DE1700BB082D /* MyButton.swift */; };
 		7B62C54C2703CA12008D6261 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62C54B2703CA12008D6261 /* AppDelegate.swift */; };
-		7B62C54E2703CA12008D6261 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62C54D2703CA12008D6261 /* SceneDelegate.swift */; };
 		7B62C5552703CA13008D6261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B62C5542703CA13008D6261 /* Assets.xcassets */; };
 		7B62C5582703CA13008D6261 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B62C5562703CA13008D6261 /* LaunchScreen.storyboard */; };
 		7B62C5632703CA13008D6261 /* MyViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62C5622703CA13008D6261 /* MyViewsTests.swift */; };
@@ -39,6 +39,9 @@
 		7B68348A270A55560021A27C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B683489270A55560021A27C /* SettingsViewController.swift */; };
 		7B68348C270A555D0021A27C /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68348B270A555D0021A27C /* SettingsViewModel.swift */; };
 		7B68348E270A6F750021A27C /* Collection+SafeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68348D270A6F750021A27C /* Collection+SafeSubscript.swift */; };
+		7B77875D270A7938004FE4CA /* XCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = 7B77875C270A7938004FE4CA /* XCoordinator */; };
+		7B778761270A7996004FE4CA /* BMICoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B778760270A7996004FE4CA /* BMICoordinator.swift */; };
+		7B778763270A8183004FE4CA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B778762270A8183004FE4CA /* AppCoordinator.swift */; };
 		7B7D87FE270A3D1D0076E21D /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7D87FD270A3D1D0076E21D /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +65,7 @@
 /* Begin PBXFileReference section */
 		7B41F3842708C3880099F853 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		7B41F3862708DCD20099F853 /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
+		7B463C36270AB2BC0070AE39 /* Coordinator+Fullscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinator+Fullscreen.swift"; sourceTree = "<group>"; };
 		7B526931270687C700DB8C50 /* GenericInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericInputView.swift; sourceTree = "<group>"; };
 		7B526933270687D500DB8C50 /* HeightInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightInputViewController.swift; sourceTree = "<group>"; };
 		7B526935270687DC00DB8C50 /* HeightInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightInputViewModel.swift; sourceTree = "<group>"; };
@@ -72,7 +76,6 @@
 		7B5C292E2703DE1700BB082D /* MyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
 		7B62C5482703CA12008D6261 /* MyViews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyViews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B62C54B2703CA12008D6261 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7B62C54D2703CA12008D6261 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7B62C5542703CA13008D6261 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B62C5572703CA13008D6261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B62C5592703CA13008D6261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 		7B683489270A55560021A27C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7B68348B270A555D0021A27C /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		7B68348D270A6F750021A27C /* Collection+SafeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+SafeSubscript.swift"; sourceTree = "<group>"; };
+		7B778760270A7996004FE4CA /* BMICoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICoordinator.swift; sourceTree = "<group>"; };
+		7B778762270A8183004FE4CA /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		7B7D87FD270A3D1D0076E21D /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B77875D270A7938004FE4CA /* XCoordinator in Frameworks */,
 				7B62C58A2703CE48008D6261 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +153,7 @@
 		7B52692F270685C300DB8C50 /* BMI */ = {
 			isa = PBXGroup;
 			children = (
+				7B778760270A7996004FE4CA /* BMICoordinator.swift */,
 				7B68347D270A4BD80021A27C /* Result */,
 				7B683476270A41FD0021A27C /* WeightInput */,
 				7B526930270685CB00DB8C50 /* HeightInput */,
@@ -218,7 +225,6 @@
 			children = (
 				7B62C5832703CD7B008D6261 /* Screens */,
 				7B62C54B2703CA12008D6261 /* AppDelegate.swift */,
-				7B62C54D2703CA12008D6261 /* SceneDelegate.swift */,
 				7B62C5542703CA13008D6261 /* Assets.xcassets */,
 				7B62C5562703CA13008D6261 /* LaunchScreen.storyboard */,
 				7B62C5592703CA13008D6261 /* Info.plist */,
@@ -266,6 +272,7 @@
 		7B62C5832703CD7B008D6261 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				7B778762270A8183004FE4CA /* AppCoordinator.swift */,
 				7B683486270A553E0021A27C /* Settings */,
 				7B52692F270685C300DB8C50 /* BMI */,
 				7B52692E270685BC00DB8C50 /* Home */,
@@ -281,6 +288,7 @@
 				7B41F3862708DCD20099F853 /* UIViewController+HideKeyboard.swift */,
 				7B7D87FD270A3D1D0076E21D /* UIViewController+Alert.swift */,
 				7B68348D270A6F750021A27C /* Collection+SafeSubscript.swift */,
+				7B463C36270AB2BC0070AE39 /* Coordinator+Fullscreen.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -332,6 +340,7 @@
 			name = MyViews;
 			packageProductDependencies = (
 				7B62C5892703CE48008D6261 /* SnapKit */,
+				7B77875C270A7938004FE4CA /* XCoordinator */,
 			);
 			productName = MyViews;
 			productReference = 7B62C5482703CA12008D6261 /* MyViews.app */;
@@ -406,6 +415,7 @@
 			mainGroup = 7B62C53F2703CA12008D6261;
 			packageReferences = (
 				7B62C5882703CE48008D6261 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7B77875B270A7938004FE4CA /* XCRemoteSwiftPackageReference "XCoordinator" */,
 			);
 			productRefGroup = 7B62C5492703CA12008D6261 /* Products */;
 			projectDirPath = "";
@@ -461,20 +471,22 @@
 				7B526934270687D500DB8C50 /* HeightInputViewController.swift in Sources */,
 				7B68348E270A6F750021A27C /* Collection+SafeSubscript.swift in Sources */,
 				7B62C57F2703CB49008D6261 /* ViewCodeProtocol.swift in Sources */,
+				7B778763270A8183004FE4CA /* AppCoordinator.swift in Sources */,
 				7B41F3872708DCD20099F853 /* UIViewController+HideKeyboard.swift in Sources */,
 				7B683481270A4BF90021A27C /* BMIResultViewModel.swift in Sources */,
 				7B62C57D2703CB19008D6261 /* LoadableViewController.swift in Sources */,
 				7B68347A270A42AD0021A27C /* WeightInputViewModel.swift in Sources */,
 				7B683488270A554B0021A27C /* SettingsView.swift in Sources */,
 				7B5C292F2703DE1700BB082D /* MyButton.swift in Sources */,
+				7B463C37270AB2BC0070AE39 /* Coordinator+Fullscreen.swift in Sources */,
 				7B683485270A4C0C0021A27C /* BMIResultView.swift in Sources */,
 				7B62C5872703CD9B008D6261 /* HomeView.swift in Sources */,
 				7B526932270687C700DB8C50 /* GenericInputView.swift in Sources */,
 				7B62C5852703CD92008D6261 /* HomeViewController.swift in Sources */,
+				7B778761270A7996004FE4CA /* BMICoordinator.swift in Sources */,
 				7B52693827068DB200DB8C50 /* UITextField+Padding.swift in Sources */,
 				7B7D87FE270A3D1D0076E21D /* UIViewController+Alert.swift in Sources */,
 				7B68348A270A55560021A27C /* SettingsViewController.swift in Sources */,
-				7B62C54E2703CA12008D6261 /* SceneDelegate.swift in Sources */,
 				7B526936270687DC00DB8C50 /* HeightInputViewModel.swift in Sources */,
 				7B68348C270A555D0021A27C /* SettingsViewModel.swift in Sources */,
 			);
@@ -813,6 +825,14 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		7B77875B270A7938004FE4CA /* XCRemoteSwiftPackageReference "XCoordinator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/quickbirdstudios/XCoordinator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.7;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -820,6 +840,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7B62C5882703CE48008D6261 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		7B77875C270A7938004FE4CA /* XCoordinator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B77875B270A7938004FE4CA /* XCRemoteSwiftPackageReference "XCoordinator" */;
+			productName = XCoordinator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

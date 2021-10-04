@@ -12,13 +12,19 @@ class WeightInputViewController: LoadableViewController<GenericInputView> {
 
     // MARK: - Variables
 
-    private lazy var viewModel = WeightInputViewModel()
+    private var viewModel: WeightInputViewModel
     private var bag = Set<AnyCancellable>()
 
-    // TODO: Refactor to use coordinators
-    var height: Float?
-
     // MARK: - Lyfecycle and constructors
+
+    required init?(coder aDecoder: NSCoder) {
+          fatalError()
+      }
+
+    init(viewModel: WeightInputViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,10 +95,7 @@ class WeightInputViewController: LoadableViewController<GenericInputView> {
             presentAlert(message: error)
         } else {
             customView.heightTextField.endEditing(true)
-            let vc = BMIResultViewController()
-            vc.height = height
-            vc.weight = viewModel.weight
-            navigationController?.pushViewController(vc, animated: true)
+            viewModel.navigateToNextScreen()
         }
     }
 }

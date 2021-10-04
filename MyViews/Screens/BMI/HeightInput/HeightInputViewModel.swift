@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import XCoordinator
 
 class HeightInputViewModel: BaseViewModel {
 
@@ -26,6 +27,7 @@ class HeightInputViewModel: BaseViewModel {
             errorMessage = newValue?.localizedDescription ?? nil
         }
     }
+    private let router: UnownedRouter<BMIRoutes>
 
     // MARK: - Enums
 
@@ -36,9 +38,17 @@ class HeightInputViewModel: BaseViewModel {
 
     // MARK: - Lyfecycle and constructors
 
-    override init() {
+    init(router: UnownedRouter<BMIRoutes>) {
+        self.router = router
         super.init()
         validateHeight()
+    }
+
+    // MARK: - Functions
+
+    func navigateToNextScreen() {
+        guard let height = height else { return }
+        router.trigger(.weight(height: height))
     }
 
     // MARK: - Private functions

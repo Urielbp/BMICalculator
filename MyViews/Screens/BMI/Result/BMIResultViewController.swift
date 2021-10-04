@@ -11,14 +11,19 @@ import UIKit
 class BMIResultViewController: LoadableViewController<BMIResultView> {
     // MARK: - Variables
 
-    private lazy var viewModel = BMIResultViewModel(height: height, weight: weight)
+    private var viewModel: BMIResultViewModel
     private var bag = Set<AnyCancellable>()
 
-    // TODO: Refactor to use coordinators
-    var height: Float?
-    var weight: Float?
-
     // MARK: - Lyfecycle and constructors
+
+    required init?(coder aDecoder: NSCoder) {
+          fatalError()
+      }
+
+    init(viewModel: BMIResultViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +69,6 @@ class BMIResultViewController: LoadableViewController<BMIResultView> {
     }
 
     @objc private func didTouchContinueButton(_ sender: UIButton) {
-        navigationController?.popToRootViewController(animated: true)
+        viewModel.finishFlow()
     }
 }

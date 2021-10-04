@@ -12,15 +12,25 @@ class HomeViewController: LoadableViewController<HomeView> {
 
     // MARK: - Variables
 
-    private lazy var viewModel = HomeViewModel()
+    private var viewModel: HomeViewModel
     private var bag = Set<AnyCancellable>()
 
     // MARK: - Lyfecycle and constructors
+
+    required init?(coder aDecoder: NSCoder) {
+          fatalError()
+      }
+
+    init(viewModel: HomeViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
         setupTargets()
+        title = "Home"
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -60,12 +70,10 @@ class HomeViewController: LoadableViewController<HomeView> {
     }
 
     @objc private func didTouchCalculationButton(_ sender: UIButton) {
-        let vc = HeightInputViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        viewModel.navigateToBMICalculator()
     }
 
     @objc private func didTouchSettingsButton(_ sender: UIButton) {
-        let vc = SettingsViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        viewModel.navigateToSettings()
     }
 }

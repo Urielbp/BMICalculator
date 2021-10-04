@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import XCoordinator
 
 class WeightInputViewModel: BaseViewModel {
 
@@ -26,6 +27,7 @@ class WeightInputViewModel: BaseViewModel {
             errorMessage = newValue?.localizedDescription ?? nil
         }
     }
+    private let router: UnownedRouter<BMIRoutes>
 
     // MARK: - Enums
 
@@ -36,9 +38,17 @@ class WeightInputViewModel: BaseViewModel {
 
     // MARK: - Lyfecycle and constructors
 
-    override init() {
+    init(router: UnownedRouter<BMIRoutes>) {
+        self.router = router
         super.init()
         validateWeight()
+    }
+
+    // MARK: - Functions
+
+    func navigateToNextScreen() {
+        guard let weight = weight else { return }
+        router.trigger(.result(weight: weight))
     }
 
     // MARK: - Private functions

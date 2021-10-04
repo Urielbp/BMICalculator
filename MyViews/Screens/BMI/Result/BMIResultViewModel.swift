@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import XCoordinator
 
 class BMIResultViewModel: BaseViewModel {
 
@@ -19,6 +20,7 @@ class BMIResultViewModel: BaseViewModel {
 
     // MARK: - Private variables
 
+    private let router: UnownedRouter<BMIRoutes>
     private var height: Float?
     private var weight: Float?
     private var heightUnit = UserDefaultsImplementation.get(string: .heightUnit)
@@ -28,11 +30,18 @@ class BMIResultViewModel: BaseViewModel {
 
     // MARK: - Lyfecycle and constructors
 
-    init(height: Float?, weight: Float?) {
+    init(height: Float?, weight: Float?, router: UnownedRouter<BMIRoutes>) {
         self.height = height
         self.weight = weight
+        self.router = router
         super.init()
         calculateBMI()
+    }
+
+    // MARK: - Functions
+
+    func finishFlow() {
+        router.trigger(.finish)
     }
 
     // MARK: - Private functions
