@@ -51,6 +51,10 @@ class WeightInputViewModel: BaseViewModel {
         router.trigger(.result(weight: weight))
     }
 
+    func close() {
+        router.trigger(.finish)
+    }
+
     // MARK: - Private functions
 
     private func validateWeight() {

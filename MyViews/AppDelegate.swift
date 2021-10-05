@@ -20,6 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         router.setRoot(for: mainWindow)
+        setupUserDefaults()
         return true
+    }
+
+    private func setupUserDefaults() {
+        if UserDefaultsImplementation.get(string: .heightUnit) == nil {
+            UserDefaultsImplementation.set(string: .heightUnit, newValue: HeightUnit.meters.rawValue)
+        }
+
+        if UserDefaultsImplementation.get(string: .weightUnit) == nil {
+            UserDefaultsImplementation.set(string: .weightUnit, newValue: WeightUnit.kilos.rawValue)
+        }
     }
 }

@@ -51,6 +51,10 @@ class HeightInputViewModel: BaseViewModel {
         router.trigger(.weight(height: height))
     }
 
+    func close() {
+        router.trigger(.finish)
+    }
+
     // MARK: - Private functions
 
     private func validateHeight() {

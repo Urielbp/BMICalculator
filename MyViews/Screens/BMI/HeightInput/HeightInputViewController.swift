@@ -60,11 +60,17 @@ class HeightInputViewController: LoadableViewController<GenericInputView> {
         return keyboardConfiguration
     }
 
+    override func didTapCloseButton() {
+        viewModel.close()
+    }
+
     // MARK: - Private functions
 
     private func setupView() {
         customView.titleTextLabel.text = "Insert your height"
         customView.descriptionTextLabel.text = "in \(viewModel.heightUnit)"
+        setupBackButton()
+        setupCloseButton()
     }
 
     private func setupBindings() {

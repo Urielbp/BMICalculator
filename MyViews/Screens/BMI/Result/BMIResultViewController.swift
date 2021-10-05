@@ -42,11 +42,17 @@ class BMIResultViewController: LoadableViewController<BMIResultView> {
         viewModel.darkMode ? .darkContent : .lightContent
     }
 
+    override func didTapCloseButton() {
+        viewModel.finishFlow()
+    }
+
     // MARK: - Private functions
 
     private func setupView() {
         customView.titleTextLabel.text = "Your Body Mass Index is"
         customView.descriptionTextLabel.text = viewModel.bmi
+        hideBackButton()
+        setupCloseButton()
     }
 
     private func setupBindings() {

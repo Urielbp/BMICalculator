@@ -60,11 +60,17 @@ class WeightInputViewController: LoadableViewController<GenericInputView> {
         return keyboardConfiguration
     }
 
+    override func didTapCloseButton() {
+        viewModel.close()
+    }
+
     // MARK: - Private functions
 
     private func setupView() {
         customView.titleTextLabel.text = "Insert your weight"
         customView.descriptionTextLabel.text = "in \(viewModel.weightUnit)"
+        setupBackButton()
+        setupCloseButton()
     }
 
     private func setupBindings() {

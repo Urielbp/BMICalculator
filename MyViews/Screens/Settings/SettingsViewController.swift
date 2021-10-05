@@ -57,6 +57,7 @@ class SettingsViewController: LoadableViewController<SettingsView> {
 
     private func setupView() {
         customView.unitsPicker.selectRow(viewModel.selectedPickerIndex, inComponent: 0, animated: true)
+        setupBackButton()
     }
 
     private func userInterfaceStyleDidChange(_ darkModeEnabled: Bool) {

@@ -43,6 +43,7 @@
 		7B778761270A7996004FE4CA /* BMICoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B778760270A7996004FE4CA /* BMICoordinator.swift */; };
 		7B778763270A8183004FE4CA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B778762270A8183004FE4CA /* AppCoordinator.swift */; };
 		7B7D87FE270A3D1D0076E21D /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7D87FD270A3D1D0076E21D /* UIViewController+Alert.swift */; };
+		7BA37C48270D117200AD1C01 /* UIViewController+NavigationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA37C47270D117200AD1C01 /* UIViewController+NavigationButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		7B778760270A7996004FE4CA /* BMICoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICoordinator.swift; sourceTree = "<group>"; };
 		7B778762270A8183004FE4CA /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		7B7D87FD270A3D1D0076E21D /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		7BA37C47270D117200AD1C01 /* UIViewController+NavigationButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationButtons.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +291,7 @@
 				7B7D87FD270A3D1D0076E21D /* UIViewController+Alert.swift */,
 				7B68348D270A6F750021A27C /* Collection+SafeSubscript.swift */,
 				7B463C36270AB2BC0070AE39 /* Coordinator+Fullscreen.swift */,
+				7BA37C47270D117200AD1C01 /* UIViewController+NavigationButtons.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				7B463C37270AB2BC0070AE39 /* Coordinator+Fullscreen.swift in Sources */,
 				7B683485270A4C0C0021A27C /* BMIResultView.swift in Sources */,
 				7B62C5872703CD9B008D6261 /* HomeView.swift in Sources */,
+				7BA37C48270D117200AD1C01 /* UIViewController+NavigationButtons.swift in Sources */,
 				7B526932270687C700DB8C50 /* GenericInputView.swift in Sources */,
 				7B62C5852703CD92008D6261 /* HomeViewController.swift in Sources */,
 				7B778761270A7996004FE4CA /* BMICoordinator.swift in Sources */,
