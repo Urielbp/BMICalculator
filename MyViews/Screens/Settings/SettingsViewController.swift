@@ -5,7 +5,6 @@
 //  Created by Uriel Barbosa Pinheiro on 03/10/21.
 //
 
-import Combine
 import UIKit
 
 class SettingsViewController: LoadableViewController<SettingsView> {
@@ -13,13 +12,11 @@ class SettingsViewController: LoadableViewController<SettingsView> {
     // MARK: - Variables
 
     private lazy var viewModel = SettingsViewModel()
-    private var bag = Set<AnyCancellable>()
     
     // MARK: - Lyfecycle and constructors
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupBindings()
         setupTargets()
         setupDelegates()
         setupView()
@@ -35,16 +32,6 @@ class SettingsViewController: LoadableViewController<SettingsView> {
     }
 
     // MARK: - Private functions
-
-    private func setupBindings() {
-        viewModel.$darkMode
-            .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { [weak self] darkMode in
-                guard let self = self else { return }
-                self.userInterfaceStyleDidChange(darkMode)
-            })
-            .store(in: &bag)
-    }
 
     private func setupTargets() {
         customView.darkModeToggle.addTarget(self, action: #selector(didToggleDarkMode), for: .valueChanged)
@@ -68,6 +55,7 @@ class SettingsViewController: LoadableViewController<SettingsView> {
 
     @objc private func didToggleDarkMode(_ sender: UISwitch) {
         viewModel.darkMode = sender.isOn
+        userInterfaceStyleDidChange(viewModel.darkMode)
     }
 }
 

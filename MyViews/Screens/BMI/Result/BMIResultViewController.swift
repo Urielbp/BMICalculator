@@ -5,7 +5,6 @@
 //  Created by Uriel Barbosa Pinheiro on 03/10/21.
 //
 
-import Combine
 import UIKit
 
 class BMIResultViewController: LoadableViewController<BMIResultView> {
@@ -28,7 +27,6 @@ class BMIResultViewController: LoadableViewController<BMIResultView> {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupBindings()
         setupTargets()
         registerKeyboardNotifications()
     }
@@ -53,16 +51,6 @@ class BMIResultViewController: LoadableViewController<BMIResultView> {
         customView.descriptionTextLabel.text = viewModel.bmi
         hideBackButton()
         setupCloseButton()
-    }
-
-    private func setupBindings() {
-        viewModel.$darkMode
-            .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { [weak self] darkMode in
-                guard let self = self else { return }
-                self.userInterfaceStyleDidChange(darkMode)
-            })
-            .store(in: &bag)
     }
 
     private func userInterfaceStyleDidChange(_ darkModeEnabled: Bool) {

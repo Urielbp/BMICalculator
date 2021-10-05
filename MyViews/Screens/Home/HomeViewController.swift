@@ -5,15 +5,13 @@
 //  Created by Uriel Barbosa Pinheiro on 28/09/21.
 //
 
-import Combine
 import UIKit
 
 class HomeViewController: LoadableViewController<HomeView> {
 
     // MARK: - Variables
 
-    private var viewModel: HomeViewModel
-    private var bag = Set<AnyCancellable>()
+    private var viewModel: HomeViewModelProtocol
 
     // MARK: - Lyfecycle and constructors
 
@@ -21,14 +19,13 @@ class HomeViewController: LoadableViewController<HomeView> {
           fatalError()
       }
 
-    init(viewModel: HomeViewModel) {
+    init(viewModel: HomeViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupBindings()
         setupTargets()
         title = "Home"
     }
@@ -44,16 +41,6 @@ class HomeViewController: LoadableViewController<HomeView> {
     }
 
     // MARK: - Private functions
-
-    private func setupBindings() {
-        viewModel.$darkMode
-            .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { [weak self] darkMode in
-                guard let self = self else { return }
-                self.userInterfaceStyleDidChange(darkMode)
-            })
-            .store(in: &bag)
-    }
 
     private func setupTargets() {
         customView.bodyMassCalculatorButton.addTarget(self, action: #selector(didTouchCalculationButton), for: .touchUpInside)

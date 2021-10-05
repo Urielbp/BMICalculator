@@ -8,6 +8,11 @@
 import Foundation
 import XCoordinator
 
+protocol HomeViewModelProtocol: DarkModeViewModelProtocol {
+    func navigateToBMICalculator()
+    func navigateToSettings()
+}
+
 class HomeViewModel: BaseViewModel {
 
     // MARK: - Private variables
@@ -20,6 +25,11 @@ class HomeViewModel: BaseViewModel {
         self.router = router
         super.init()
     }
+}
+
+// MARK: - HomeViewModelProtocol
+
+extension HomeViewModel: HomeViewModelProtocol {
 
     // MARK: - Functions
 
@@ -30,5 +40,4 @@ class HomeViewModel: BaseViewModel {
     func navigateToSettings() {
         router.trigger(.settings)
     }
-
 }

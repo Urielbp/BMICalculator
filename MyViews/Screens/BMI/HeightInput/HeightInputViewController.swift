@@ -5,7 +5,6 @@
 //  Created by Uriel Barbosa Pinheiro on 30/09/21.
 //
 
-import Combine
 import UIKit
 
 class HeightInputViewController: LoadableViewController<GenericInputView> {
@@ -29,7 +28,6 @@ class HeightInputViewController: LoadableViewController<GenericInputView> {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupBindings()
         setupTargets()
         setupDelegates()
         registerKeyboardNotifications()
@@ -71,16 +69,6 @@ class HeightInputViewController: LoadableViewController<GenericInputView> {
         customView.descriptionTextLabel.text = "in \(viewModel.heightUnit)"
         setupBackButton()
         setupCloseButton()
-    }
-
-    private func setupBindings() {
-        viewModel.$darkMode
-            .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { [weak self] darkMode in
-                guard let self = self else { return }
-                self.userInterfaceStyleDidChange(darkMode)
-            })
-            .store(in: &bag)
     }
 
     private func userInterfaceStyleDidChange(_ darkModeEnabled: Bool) {

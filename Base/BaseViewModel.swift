@@ -7,11 +7,17 @@
 
 import Foundation
 
-class BaseViewModel {
+protocol DarkModeViewModelProtocol: AnyObject {
+    var darkMode: Bool { get set }
+
+    func forceUpdate()
+}
+
+class BaseViewModel: DarkModeViewModelProtocol {
 
     // MARK: - Bindable variables
 
-    @Published var darkMode: Bool = UserDefaultsImplementation.get(bool: .darkModeEnabled) {
+    var darkMode: Bool = UserDefaultsImplementation.get(bool: .darkModeEnabled) {
         didSet {
             UserDefaultsImplementation.set(bool: .darkModeEnabled, newValue: darkMode)
         }
