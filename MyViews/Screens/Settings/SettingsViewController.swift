@@ -11,9 +11,18 @@ class SettingsViewController: LoadableViewController<SettingsView> {
 
     // MARK: - Variables
 
-    private lazy var viewModel = SettingsViewModel()
+    private var viewModel: SettingsViewModelProtocol
     
     // MARK: - Lyfecycle and constructors
+
+    required init?(coder aDecoder: NSCoder) {
+          fatalError()
+      }
+
+    init(viewModel: SettingsViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

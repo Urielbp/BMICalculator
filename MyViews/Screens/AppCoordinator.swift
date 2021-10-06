@@ -33,7 +33,8 @@ class AppCoordinator: NavigationCoordinator<AppRoute> {
             let viewController = HomeViewController(viewModel: homeViewModel)
             return .push(viewController)
         case .settings:
-            let viewController = SettingsViewController()
+            let settingsViewModel = SettingsViewModel()
+            let viewController = SettingsViewController(viewModel: settingsViewModel)
             return .push(viewController)
         }
     }

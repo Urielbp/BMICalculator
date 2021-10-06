@@ -17,6 +17,11 @@ enum WeightUnit: String, CaseIterable {
     case pounds
 }
 
+protocol SettingsViewModelProtocol: DarkModeViewModelProtocol {
+    var unitsPickerOptions: [String] { get }
+    var selectedPickerIndex: Int { get set }
+}
+
 class SettingsViewModel: BaseViewModel {
 
     // MARK: - Constants
@@ -42,3 +47,5 @@ class SettingsViewModel: BaseViewModel {
         }
     }
 }
+
+extension SettingsViewModel: SettingsViewModelProtocol { }
