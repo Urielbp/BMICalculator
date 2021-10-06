@@ -109,11 +109,11 @@ extension BMIResultViewModel.CustomError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .invalidUnits:
-            return "Units were not selected, please go to settings to choose metric or imperial units"
+            return "bmi.result.error.invalid.units".localized
         case .noHeightValue:
-            return "Height is not valid"
+            return "bmi.result.error.no.height".localized
         case .noWeightValue:
-            return "Weight is not valid"
+            return "bmi.result.error.no.weight".localized
         }
     }
 }

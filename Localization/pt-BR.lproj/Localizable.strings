@@ -8,8 +8,11 @@
 
 // MARK: - Generic
 
+"alert.title" = "Atenção";
 "continue.button" = "Continuar";
 "height.weight.input.subtitle" = "em %@";
+"height.weight.input.error.no.input" = "Por favor, digite algum valor";
+"height.weight.input.error.negative.input" = "Por favor, digite um valor positivo";
 
 // MARK: - Home
 

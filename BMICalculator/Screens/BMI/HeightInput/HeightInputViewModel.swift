@@ -91,9 +91,9 @@ extension HeightInputViewModel.CustomError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .noInput:
-            return "Please enter some value"
+            return "height.weight.input.error.no.input".localized
         case .heightIsNotPositive:
-            return "Please enter a positive value for your height"
+            return "height.weight.input.error.negative.input".localized
         }
     }
 }

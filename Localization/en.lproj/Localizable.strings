@@ -8,8 +8,11 @@
 
 // MARK: - Generic
 
+"alert.title" = "Attention";
 "continue.button" = "Continue";
 "height.weight.input.subtitle" = "in %@";
+"height.weight.input.error.no.input" = "Please enter some value";
+"height.weight.input.error.negative.input" = "Please enter a positive value";
 
 // MARK: - Home
 
@@ -37,3 +40,7 @@
 
 "bmi.result.title" = "Your Body Mass Index is";
 "bmi.result.finish.button" = "Finish";
+"bmi.result.error.invalid.units" = "Units were not selected, please go to settings to choose metric or imperial units";
+"bmi.result.error.no.height" = "Height is not valid";
+"bmi.result.error.no.weight" = "Weight is not valid";
+
