@@ -8,6 +8,15 @@
 import Foundation
 import XCoordinator
 
+protocol WeightInputViewModelProtocol: DarkModeViewModelProtocol {
+    var weight: Float? { get set}
+    var weightUnit: String { get }
+    var errorMessage: String? { get }
+
+    func navigateToNextScreen()
+    func close()
+}
+
 class WeightInputViewModel: BaseViewModel {
 
     // MARK: - Variables
@@ -29,19 +38,22 @@ class WeightInputViewModel: BaseViewModel {
     }
     private let router: UnownedRouter<BMIRoutes>
 
-    // MARK: - Enums
-
-    enum CustomError: Error {
-        case noInput
-        case weightIsNotPositive
-    }
-
     // MARK: - Lyfecycle and constructors
 
     init(router: UnownedRouter<BMIRoutes>) {
         self.router = router
         super.init()
         validateWeight()
+    }
+}
+
+extension WeightInputViewModel: WeightInputViewModelProtocol {
+
+    // MARK: - Enums
+
+    enum CustomError: Error {
+        case noInput
+        case weightIsNotPositive
     }
 
     // MARK: - Functions

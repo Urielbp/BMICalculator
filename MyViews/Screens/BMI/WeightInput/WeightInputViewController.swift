@@ -11,7 +11,7 @@ class WeightInputViewController: LoadableViewController<GenericInputView> {
 
     // MARK: - Variables
 
-    private var viewModel: WeightInputViewModel
+    private var viewModel: WeightInputViewModelProtocol
 
     // MARK: - Lyfecycle and constructors
 
@@ -19,7 +19,7 @@ class WeightInputViewController: LoadableViewController<GenericInputView> {
           fatalError()
       }
 
-    init(viewModel: WeightInputViewModel) {
+    init(viewModel: WeightInputViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
