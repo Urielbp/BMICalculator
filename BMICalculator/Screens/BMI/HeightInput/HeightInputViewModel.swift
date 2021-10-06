@@ -36,11 +36,11 @@ class HeightInputViewModel: BaseViewModel {
             errorMessage = newValue?.localizedDescription ?? nil
         }
     }
-    private let router: UnownedRouter<BMIRoutes>
+    private let router: WeakRouter<BMIRoutes>?
 
     // MARK: - Lyfecycle and constructors
 
-    init(router: UnownedRouter<BMIRoutes>) {
+    init(router: WeakRouter<BMIRoutes>?) {
         self.router = router
         super.init()
         validateHeight()
@@ -62,11 +62,11 @@ extension HeightInputViewModel: HeightInputViewModelProtocol {
 
     func navigateToNextScreen() {
         guard let height = height else { return }
-        router.trigger(.weight(height: height))
+        router?.trigger(.weight(height: height))
     }
 
     func close() {
-        router.trigger(.finish)
+        router?.trigger(.finish)
     }
 
     // MARK: - Private functions

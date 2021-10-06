@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B27A4A2270D520A00210CD4 /* HeightInputViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B27A4A1270D520A00210CD4 /* HeightInputViewModelSpec.swift */; };
 		7B41F3852708C3880099F853 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B41F3842708C3880099F853 /* BaseViewModel.swift */; };
 		7B41F3872708DCD20099F853 /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B41F3862708DCD20099F853 /* UIViewController+HideKeyboard.swift */; };
 		7B463C37270AB2BC0070AE39 /* Coordinator+Fullscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B463C36270AB2BC0070AE39 /* Coordinator+Fullscreen.swift */; };
@@ -21,7 +22,6 @@
 		7B62C54C2703CA12008D6261 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62C54B2703CA12008D6261 /* AppDelegate.swift */; };
 		7B62C5552703CA13008D6261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B62C5542703CA13008D6261 /* Assets.xcassets */; };
 		7B62C5582703CA13008D6261 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B62C5562703CA13008D6261 /* LaunchScreen.storyboard */; };
-		7B62C5632703CA13008D6261 /* MyViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62C5622703CA13008D6261 /* MyViewsTests.swift */; };
 		7B62C56E2703CA13008D6261 /* MyViewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62C56D2703CA13008D6261 /* MyViewsUITests.swift */; };
 		7B62C57D2703CB19008D6261 /* LoadableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62C57C2703CB19008D6261 /* LoadableViewController.swift */; };
 		7B62C57F2703CB49008D6261 /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62C57E2703CB49008D6261 /* ViewCodeProtocol.swift */; };
@@ -66,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B27A4A1270D520A00210CD4 /* HeightInputViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightInputViewModelSpec.swift; sourceTree = "<group>"; };
 		7B41F3842708C3880099F853 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		7B41F3862708DCD20099F853 /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		7B463C36270AB2BC0070AE39 /* Coordinator+Fullscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinator+Fullscreen.swift"; sourceTree = "<group>"; };
@@ -83,7 +84,6 @@
 		7B62C5572703CA13008D6261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B62C5592703CA13008D6261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B62C55E2703CA13008D6261 /* BMICalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BMICalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B62C5622703CA13008D6261 /* MyViewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewsTests.swift; sourceTree = "<group>"; };
 		7B62C5642703CA13008D6261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B62C5692703CA13008D6261 /* BMICalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BMICalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B62C56D2703CA13008D6261 /* MyViewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewsUITests.swift; sourceTree = "<group>"; };
@@ -244,7 +244,7 @@
 		7B62C5612703CA13008D6261 /* BMICalculatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				7B62C5622703CA13008D6261 /* MyViewsTests.swift */,
+				7B27A4A1270D520A00210CD4 /* HeightInputViewModelSpec.swift */,
 				7B62C5642703CA13008D6261 /* Info.plist */,
 			);
 			path = BMICalculatorTests;
@@ -519,7 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B62C5632703CA13008D6261 /* MyViewsTests.swift in Sources */,
+				7B27A4A2270D520A00210CD4 /* HeightInputViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,7 +734,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GAQAM8PW76;
 				INFOPLIST_FILE = BMICalculator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -756,7 +756,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GAQAM8PW76;
 				INFOPLIST_FILE = BMICalculator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

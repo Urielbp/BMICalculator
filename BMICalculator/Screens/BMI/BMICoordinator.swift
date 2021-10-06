@@ -27,7 +27,7 @@ class BMICoordinator: NavigationCoordinator<BMIRoutes> {
     override func prepareTransition(for route: BMIRoutes) -> NavigationTransition {
         switch route {
         case .height:
-            let viewModel = HeightInputViewModel(router: unownedRouter)
+            let viewModel = HeightInputViewModel(router: weakRouter)
             let viewController = HeightInputViewController(viewModel: viewModel)
             return .push(viewController)
         case let .weight(height):
