@@ -8,7 +8,23 @@
 import Foundation
 import XCoordinator
 
+protocol BMIResultViewModelProtocol: DarkModeViewModelProtocol {
+    var bmi: String { get }
+
+    func finishFlow()
+}
+
 class BMIResultViewModel: BaseViewModel {
+
+    // MARK: - Lyfecycle and constructors
+
+    init(height: Float?, weight: Float?, router: UnownedRouter<BMIRoutes>) {
+        self.height = height
+        self.weight = weight
+        self.router = router
+        super.init()
+        calculateBMI()
+    }
 
     // MARK: - Constants
 
@@ -27,16 +43,9 @@ class BMIResultViewModel: BaseViewModel {
     private lazy var isMetricSystem: Bool = {
         heightUnit == HeightUnit.meters.rawValue
     }()
+}
 
-    // MARK: - Lyfecycle and constructors
-
-    init(height: Float?, weight: Float?, router: UnownedRouter<BMIRoutes>) {
-        self.height = height
-        self.weight = weight
-        self.router = router
-        super.init()
-        calculateBMI()
-    }
+extension BMIResultViewModel: BMIResultViewModelProtocol {
 
     // MARK: - Functions
 

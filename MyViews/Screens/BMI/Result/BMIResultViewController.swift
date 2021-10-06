@@ -10,7 +10,7 @@ import UIKit
 class BMIResultViewController: LoadableViewController<BMIResultView> {
     // MARK: - Variables
 
-    private var viewModel: BMIResultViewModel
+    private var viewModel: BMIResultViewModelProtocol
 
     // MARK: - Lyfecycle and constructors
 
@@ -18,7 +18,7 @@ class BMIResultViewController: LoadableViewController<BMIResultView> {
           fatalError()
       }
 
-    init(viewModel: BMIResultViewModel) {
+    init(viewModel: BMIResultViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
