@@ -46,8 +46,9 @@ class BMIResultViewController: LoadableViewController<BMIResultView> {
     // MARK: - Private functions
 
     private func setupView() {
-        customView.titleTextLabel.text = "Your Body Mass Index is"
+        customView.titleTextLabel.text = "bmi.result.title".localized
         customView.descriptionTextLabel.text = viewModel.bmi
+        customView.continueButton.setTitle("bmi.result.finish.button".localized, for: .normal)
         hideBackButton()
         setupCloseButton()
     }

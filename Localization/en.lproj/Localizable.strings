@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  MyViews
+
+  Created by Uriel Barbosa Pinheiro on 05/10/21.
+  
+*/
+
+// MARK: - Generic
+
+"continue.button" = "Continue";
+"height.weight.input.subtitle" = "in %@";
+
+// MARK: - Home
+
+"body.mass.calculator.button" = "Calculate Body Mass Index";
+"settings.button" = "Settings";
+
+// MARK: - Settings
+
+"settings.dark.mode.toggle" = "Dark mode";
+"settings.units.picker" = "Units used";
+"meters" = "meters";
+"inches" = "inches";
+"kilos" = "kilos";
+"pounds" = "pounds";
+
+// MARK: - Height input
+
+"height.input.title" = "Insert your height";
+
+// MARK: - Weight input
+
+"weight.input.title" = "Insert your weight";
+
+// MARK: - BMI result
+
+"bmi.result.title" = "Your Body Mass Index is";
+"bmi.result.finish.button" = "Finish";

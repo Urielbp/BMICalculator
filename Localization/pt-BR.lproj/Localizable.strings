@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  MyViews
+
+  Created by Uriel Barbosa Pinheiro on 05/10/21.
+  
+*/
+
+// MARK: - Generic
+
+"continue.button" = "Continuar";
+"height.weight.input.subtitle" = "em %@";
+
+// MARK: - Home
+
+"body.mass.calculator.button" = "Calcular Índice de Massa Corporal";
+"settings.button" = "Ajustes";
+
+// MARK: - Settings
+
+"settings.dark.mode.toggle" = "Modo escuro";
+"settings.units.picker" = "Unidades usada";
+"meters" = "metros";
+"inches" = "polegadas";
+"kilos" = "quilos";
+"pounds" = "libras";
+
+// MARK: - Height input
+
+"height.input.title" = "Insira sua altura";
+
+// MARK: - Weight input
+
+"weight.input.title" = "Insira seu peso";
+
+// MARK: - BMI result
+
+"bmi.result.title" = "Seu Índice de Massa Corporal é";
+"bmi.result.finish.button" = "Terminar";

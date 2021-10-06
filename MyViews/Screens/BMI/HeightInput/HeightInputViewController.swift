@@ -64,8 +64,9 @@ class HeightInputViewController: LoadableViewController<GenericInputView> {
     // MARK: - Private functions
 
     private func setupView() {
-        customView.titleTextLabel.text = "Insert your height"
-        customView.descriptionTextLabel.text = "in \(viewModel.heightUnit)"
+        customView.titleTextLabel.text = "height.input.title".localized
+        customView.descriptionTextLabel.text = "height.weight.input.subtitle".localized(viewModel.heightUnit)
+        customView.continueButton.setTitle("continue.button".localized, for: .normal)
         setupBackButton()
         setupCloseButton()
     }

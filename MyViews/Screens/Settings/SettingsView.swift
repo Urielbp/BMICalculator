@@ -35,7 +35,6 @@ class SettingsView: UIView {
     lazy var darkModeTextLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = "Dark mode"
         view.textColor = DesignSystem.Colors.textStrong
 
         return view
@@ -52,7 +51,6 @@ class SettingsView: UIView {
     lazy var unitsTextLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = "Unit used"
         view.textColor = DesignSystem.Colors.textStrong
 
         return view

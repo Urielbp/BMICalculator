@@ -31,8 +31,8 @@ class SettingsViewModel: BaseViewModel {
     // MARK: - Variables
 
     var unitsPickerOptions: [String] {
-        let heightUnits = HeightUnit.allCases.map({ $0.rawValue })
-        let weightUnits = WeightUnit.allCases.map({ $0.rawValue })
+        let heightUnits = HeightUnit.allCases.map({ $0.rawValue.localized })
+        let weightUnits = WeightUnit.allCases.map({ $0.rawValue.localized })
         return zip(heightUnits, weightUnits).map({ "\($0)\(kUnitsSeparator)\($1)" })
     }
 

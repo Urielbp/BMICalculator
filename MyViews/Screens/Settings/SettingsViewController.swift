@@ -52,6 +52,8 @@ class SettingsViewController: LoadableViewController<SettingsView> {
     }
 
     private func setupView() {
+        customView.darkModeTextLabel.text = "settings.dark.mode.toggle".localized
+        customView.unitsTextLabel.text = "settings.units.picker".localized
         customView.unitsPicker.selectRow(viewModel.selectedPickerIndex, inComponent: 0, animated: true)
         setupBackButton()
     }

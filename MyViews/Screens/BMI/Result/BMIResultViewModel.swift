@@ -41,7 +41,7 @@ class BMIResultViewModel: BaseViewModel {
     private var weight: Float?
     private var heightUnit = UserDefaultsImplementation.get(string: .heightUnit)
     private lazy var isMetricSystem: Bool = {
-        heightUnit == HeightUnit.meters.rawValue
+        heightUnit == HeightUnit.meters.rawValue.localized
     }()
 }
 

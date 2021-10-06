@@ -45,7 +45,6 @@ class BMIResultView: UIView {
     lazy var continueButton: MyButton = {
         let view = MyButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setTitle("Finish", for: .normal)
 
         return view
     }()

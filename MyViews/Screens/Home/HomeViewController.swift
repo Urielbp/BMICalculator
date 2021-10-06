@@ -26,7 +26,7 @@ class HomeViewController: LoadableViewController<HomeView> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTargets()
+        setupButtons()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +41,10 @@ class HomeViewController: LoadableViewController<HomeView> {
 
     // MARK: - Private functions
 
-    private func setupTargets() {
+    private func setupButtons() {
+        customView.bodyMassCalculatorButton.setTitle("body.mass.calculator.button".localized, for: .normal)
+        customView.settingsButton.setTitle("settings.button".localized, for: .normal)
+
         customView.bodyMassCalculatorButton.addTarget(self, action: #selector(didTouchCalculationButton), for: .touchUpInside)
         customView.settingsButton.addTarget(self, action: #selector(didTouchSettingsButton), for: .touchUpInside)
     }

@@ -15,7 +15,6 @@ class HomeView: UIView {
     lazy var bodyMassCalculatorButton: MyButton = {
         let view = MyButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setTitle("Calculate Body Mass Index", for: .normal)
 
         return view
     }()
@@ -23,7 +22,6 @@ class HomeView: UIView {
     lazy var settingsButton: MyButton = {
         let view = MyButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setTitle("Settings", for: .normal)
 
         return view
     }()

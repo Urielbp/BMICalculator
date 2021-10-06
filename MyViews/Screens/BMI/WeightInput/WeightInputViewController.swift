@@ -64,8 +64,9 @@ class WeightInputViewController: LoadableViewController<GenericInputView> {
     // MARK: - Private functions
 
     private func setupView() {
-        customView.titleTextLabel.text = "Insert your weight"
-        customView.descriptionTextLabel.text = "in \(viewModel.weightUnit)"
+        customView.titleTextLabel.text = "weight.input.title".localized
+        customView.descriptionTextLabel.text = "height.weight.input.subtitle".localized(viewModel.weightUnit)
+        customView.continueButton.setTitle("continue.button".localized, for: .normal)
         setupBackButton()
         setupCloseButton()
     }
