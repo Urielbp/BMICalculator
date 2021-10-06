@@ -32,7 +32,7 @@ class BMICoordinator: NavigationCoordinator<BMIRoutes> {
             return .push(viewController)
         case let .weight(height):
             self.height = height
-            let viewModel = WeightInputViewModel(router: unownedRouter)
+            let viewModel = WeightInputViewModel(router: weakRouter)
             let viewController = WeightInputViewController(viewModel: viewModel)
             return .push(viewController)
         case let .result(weight):

@@ -29,13 +29,11 @@ class HeightInputViewModelSpec: XCTestCase {
 
     func testNoInputProducesInputError() {
         sut = HeightInputViewModel(router: nil)
-        XCTAssertEqual(sut?.errorMessage, HeightInputViewModel.CustomError.noInput.localizedDescription)
+        XCTAssertNotNil(sut?.errorMessage)
     }
 
-    func testNegativeValuePRoducesError() {
+    func testNegativeValueProducesError() {
         sut?.height = -5
-        XCTAssertEqual(sut?.errorMessage, HeightInputViewModel.CustomError.heightIsNotPositive.localizedDescription)
+        XCTAssertNotNil(sut?.errorMessage)
     }
-
-
 }

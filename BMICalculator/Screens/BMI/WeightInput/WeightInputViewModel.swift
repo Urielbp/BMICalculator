@@ -36,11 +36,11 @@ class WeightInputViewModel: BaseViewModel {
             errorMessage = newValue?.localizedDescription ?? nil
         }
     }
-    private let router: UnownedRouter<BMIRoutes>
+    private let router: WeakRouter<BMIRoutes>?
 
     // MARK: - Lyfecycle and constructors
 
-    init(router: UnownedRouter<BMIRoutes>) {
+    init(router: WeakRouter<BMIRoutes>?) {
         self.router = router
         super.init()
         validateWeight()
@@ -60,11 +60,11 @@ extension WeightInputViewModel: WeightInputViewModelProtocol {
 
     func navigateToNextScreen() {
         guard let weight = weight else { return }
-        router.trigger(.result(weight: weight))
+        router?.trigger(.result(weight: weight))
     }
 
     func close() {
-        router.trigger(.finish)
+        router?.trigger(.finish)
     }
 
     // MARK: - Private functions

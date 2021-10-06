@@ -26,7 +26,18 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "7B62C5472703CA12008D6261"
+            BuildableName = "BMICalculator.app"
+            BlueprintName = "BMICalculator"
+            ReferencedContainer = "container:BMICalculator.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
       </Testables>
    </TestAction>
