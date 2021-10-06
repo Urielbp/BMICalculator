@@ -28,7 +28,8 @@ class BMIResultViewModel: BaseViewModel {
 
     // MARK: - Constants
 
-    private let kImperialMultipler: Float = 703
+    private let kImperialSystemMultipler: Float = 703
+    private let kMetricSystemMultipler: Float = 1
 
     // MARK: - Variables
 
@@ -58,7 +59,8 @@ extension BMIResultViewModel: BMIResultViewModelProtocol {
     private func calculateBMI() {
         guard let height = height,
               let weight = weight else { return  }
-        let bmi = isMetricSystem ? (weight / (pow(height, 2))) :(weight / (pow(height, 2)) * kImperialMultipler)
+        let multiplier = isMetricSystem ? kMetricSystemMultipler : kImperialSystemMultipler
+        let bmi = (weight / (pow(height, 2))) * multiplier
         self.bmi = String(format: "%.1f", bmi)
     }
 }

@@ -26,11 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func setupUserDefaults() {
         if UserDefaultsImplementation.get(string: .heightUnit) == nil {
-            UserDefaultsImplementation.set(string: .heightUnit, newValue: HeightUnit.meters.rawValue)
+            UserDefaultsImplementation.set(string: .heightUnit, newValue: HeightUnit.meters.rawValue.localized)
         }
 
         if UserDefaultsImplementation.get(string: .weightUnit) == nil {
-            UserDefaultsImplementation.set(string: .weightUnit, newValue: WeightUnit.kilos.rawValue)
+            UserDefaultsImplementation.set(string: .weightUnit, newValue: WeightUnit.kilos.rawValue.localized)
         }
     }
 }
