@@ -8,6 +8,15 @@
 import Foundation
 import XCoordinator
 
+protocol HeightInputViewModelProtocol: DarkModeViewModelProtocol {
+    var height: Float? { get set}
+    var heightUnit: String { get }
+    var errorMessage: String? { get }
+
+    func navigateToNextScreen()
+    func close()
+}
+
 class HeightInputViewModel: BaseViewModel {
 
     // MARK: - Variables
@@ -29,19 +38,24 @@ class HeightInputViewModel: BaseViewModel {
     }
     private let router: UnownedRouter<BMIRoutes>
 
-    // MARK: - Enums
-
-    enum CustomError: Error {
-        case noInput
-        case heightIsNotPositive
-    }
-
     // MARK: - Lyfecycle and constructors
 
     init(router: UnownedRouter<BMIRoutes>) {
         self.router = router
         super.init()
         validateHeight()
+    }
+}
+
+// MARK: - HeightInputViewModelProtocol
+
+extension HeightInputViewModel: HeightInputViewModelProtocol {
+
+    // MARK: - Enums
+
+    enum CustomError: Error {
+        case noInput
+        case heightIsNotPositive
     }
 
     // MARK: - Functions

@@ -27,7 +27,6 @@ class HomeViewController: LoadableViewController<HomeView> {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTargets()
-        title = "Home"
     }
 
     override func viewWillAppear(_ animated: Bool) {

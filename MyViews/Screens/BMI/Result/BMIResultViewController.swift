@@ -11,7 +11,6 @@ class BMIResultViewController: LoadableViewController<BMIResultView> {
     // MARK: - Variables
 
     private var viewModel: BMIResultViewModel
-    private var bag = Set<AnyCancellable>()
 
     // MARK: - Lyfecycle and constructors
 

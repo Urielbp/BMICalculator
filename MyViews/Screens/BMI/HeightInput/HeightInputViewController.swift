@@ -11,8 +11,7 @@ class HeightInputViewController: LoadableViewController<GenericInputView> {
 
     // MARK: - Variables
 
-    private var viewModel: HeightInputViewModel
-    private var bag = Set<AnyCancellable>()
+    private var viewModel: HeightInputViewModelProtocol
 
     // MARK: - Lyfecycle and constructors
 
@@ -20,7 +19,7 @@ class HeightInputViewController: LoadableViewController<GenericInputView> {
           fatalError()
       }
 
-    init(viewModel: HeightInputViewModel) {
+    init(viewModel: HeightInputViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

@@ -12,7 +12,6 @@ class WeightInputViewController: LoadableViewController<GenericInputView> {
     // MARK: - Variables
 
     private var viewModel: WeightInputViewModel
-    private var bag = Set<AnyCancellable>()
 
     // MARK: - Lyfecycle and constructors
 
