@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7B27A4A2270D520A00210CD4 /* HeightInputViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B27A4A1270D520A00210CD4 /* HeightInputViewModelSpec.swift */; };
 		7B27A4A4270D567600210CD4 /* WeightInputViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B27A4A3270D567600210CD4 /* WeightInputViewModelSpec.swift */; };
+		7B27A4A6270D57F100210CD4 /* BMIResultViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B27A4A5270D57F100210CD4 /* BMIResultViewModelSpec.swift */; };
 		7B41F3852708C3880099F853 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B41F3842708C3880099F853 /* BaseViewModel.swift */; };
 		7B41F3872708DCD20099F853 /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B41F3862708DCD20099F853 /* UIViewController+HideKeyboard.swift */; };
 		7B463C37270AB2BC0070AE39 /* Coordinator+Fullscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B463C36270AB2BC0070AE39 /* Coordinator+Fullscreen.swift */; };
@@ -69,6 +70,7 @@
 /* Begin PBXFileReference section */
 		7B27A4A1270D520A00210CD4 /* HeightInputViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightInputViewModelSpec.swift; sourceTree = "<group>"; };
 		7B27A4A3270D567600210CD4 /* WeightInputViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightInputViewModelSpec.swift; sourceTree = "<group>"; };
+		7B27A4A5270D57F100210CD4 /* BMIResultViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIResultViewModelSpec.swift; sourceTree = "<group>"; };
 		7B41F3842708C3880099F853 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		7B41F3862708DCD20099F853 /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		7B463C36270AB2BC0070AE39 /* Coordinator+Fullscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinator+Fullscreen.swift"; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			children = (
 				7B27A4A1270D520A00210CD4 /* HeightInputViewModelSpec.swift */,
 				7B27A4A3270D567600210CD4 /* WeightInputViewModelSpec.swift */,
+				7B27A4A5270D57F100210CD4 /* BMIResultViewModelSpec.swift */,
 				7B62C5642703CA13008D6261 /* Info.plist */,
 			);
 			path = BMICalculatorTests;
@@ -524,6 +527,7 @@
 			files = (
 				7B27A4A4270D567600210CD4 /* WeightInputViewModelSpec.swift in Sources */,
 				7B27A4A2270D520A00210CD4 /* HeightInputViewModelSpec.swift in Sources */,
+				7B27A4A6270D57F100210CD4 /* BMIResultViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

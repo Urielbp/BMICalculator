@@ -18,9 +18,15 @@ class BMIResultViewModel: BaseViewModel {
 
     // MARK: - Lyfecycle and constructors
 
-    init(height: Float?, weight: Float?, router: UnownedRouter<BMIRoutes>) {
-        self.height = height
-        self.weight = weight
+    init(heigth: Float?,
+         heigthUnit: String?,
+         weigth: Float?,
+         weigthUnit: String?,
+         router: WeakRouter<BMIRoutes>?) {
+        self.heigth = heigth
+        self.heigthUnit = heigthUnit
+        self.weigth = weigth
+        self.weigthUnit = weigthUnit
         self.router = router
         super.init()
         calculateBMI()
@@ -37,30 +43,77 @@ class BMIResultViewModel: BaseViewModel {
 
     // MARK: - Private variables
 
-    private let router: UnownedRouter<BMIRoutes>
-    private var height: Float?
-    private var weight: Float?
-    private var heightUnit = UserDefaultsImplementation.get(string: .heightUnit)
+    private let router: WeakRouter<BMIRoutes>?
+    private var heigth: Float?
+    private var weigth: Float?
+    private var heigthUnit: String?
+    private var weigthUnit: String?
     private lazy var isMetricSystem: Bool = {
-        heightUnit == HeightUnit.meters.rawValue.localized
+        heigthUnit == HeightUnit.meters.rawValue.localized && weigthUnit == WeightUnit.kilos.rawValue.localized
     }()
+    private lazy var isImperialSystem: Bool = {
+        heigthUnit == HeightUnit.inches.rawValue.localized && weigthUnit == WeightUnit.pounds.rawValue.localized
+    }()
+    private lazy var isUnitValidSystem: Bool = {
+        (isMetricSystem || isImperialSystem) && (isMetricSystem != isImperialSystem)
+    }()
+    private var error: CustomError? {
+        willSet {
+            bmi = newValue?.localizedDescription ?? ""
+        }
+    }
 }
 
 extension BMIResultViewModel: BMIResultViewModelProtocol {
 
+    // MARK: - Enums
+
+    enum CustomError: Error {
+        case invalidUnits
+        case noWeightValue
+        case noHeightValue
+    }
+
     // MARK: - Functions
 
     func finishFlow() {
-        router.trigger(.finish)
+        router?.trigger(.finish)
     }
 
     // MARK: - Private functions
 
     private func calculateBMI() {
-        guard let height = height,
-              let weight = weight else { return  }
+        guard let heigth = heigth else {
+            error = .noHeightValue
+            return
+        }
+
+        guard let weigth = weigth else {
+            error = .noWeightValue
+            return
+        }
+
+        guard isUnitValidSystem else {
+            error = .invalidUnits
+            return
+        }
         let multiplier = isMetricSystem ? kMetricSystemMultipler : kImperialSystemMultipler
-        let bmi = (weight / (pow(height, 2))) * multiplier
+        let bmi = (weigth / (pow(heigth, 2))) * multiplier
         self.bmi = String(format: "%.1f", bmi)
+    }
+}
+
+// MARK: - Error message handling
+
+extension BMIResultViewModel.CustomError: LocalizedError {
+    var errorDescription: String? {
+        switch self {
+        case .invalidUnits:
+            return "Units were not selected, please go to settings to choose metric or imperial units"
+        case .noHeightValue:
+            return "Height is not valid"
+        case .noWeightValue:
+            return "Weight is not valid"
+        }
     }
 }
