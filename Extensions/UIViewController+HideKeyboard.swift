@@ -1,6 +1,6 @@
 //
 //  UIViewController+HideKeyboard.swift
-//  MyViews
+//  BMICalculator
 //
 //  Created by Uriel Barbosa Pinheiro on 02/10/21.
 //

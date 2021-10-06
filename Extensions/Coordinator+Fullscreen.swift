@@ -1,6 +1,6 @@
 //
 //  Coordinator+Fullscreen.swift
-//  MyViews
+//  BMICalculator
 //
 //  Created by Uriel Barbosa Pinheiro on 04/10/21.
 //

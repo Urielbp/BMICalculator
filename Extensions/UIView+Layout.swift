@@ -1,6 +1,6 @@
 //
 //  UIView+Layout.swift
-//  MyViews
+//  BMICalculator
 //
 //  Created by Uriel Barbosa Pinheiro on 28/09/21.
 //

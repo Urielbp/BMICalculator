@@ -1,6 +1,6 @@
 //
 //  UIViewController+Alert.swift
-//  MyViews
+//  BMICalculator
 //
 //  Created by Uriel Barbosa Pinheiro on 03/10/21.
 //

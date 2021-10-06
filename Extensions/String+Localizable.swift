@@ -1,6 +1,6 @@
 //
 //  String+Localizable.swift
-//  MyViews
+//  BMICalculator
 //
 //  Created by Uriel Barbosa Pinheiro on 05/10/21.
 //
